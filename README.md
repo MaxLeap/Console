@@ -1,4 +1,7 @@
+![maxleap-logo](https://avatars2.githubusercontent.com/u/11622934?v=3&s=100)
+
 # Console
+
 Console是[MaxLeap](https://maxleap.cn)部分产品的开源项目的前端部分。
 
 ## 浏览器支持
