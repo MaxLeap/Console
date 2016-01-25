@@ -5,7 +5,7 @@
       //lib
       jquery: 'lib/jquery/jquery.min',
       underscore: 'lib/underscore/underscore-min',
-      nicescroll: 'vendor/jquery.nicescroll/jquery.nicescroll',
+      nicescroll: 'vendor/jquery.nicescroll/jquery.nicescroll.min',
       store2: 'lib/store/dist/store2.min',
       Q: 'lib/q/q',
       backbone: 'lib/backbone/backbone-min',
@@ -25,30 +25,14 @@
       'moment-timezone':'lib/moment-timezone/builds/moment-timezone-with-data.min',
       zeroclipboard: 'lib/zeroclipboard/dist/ZeroClipboard.min',
       daterangepicker: "vendor/bootstrap-daterangepicker/daterangepicker",
-      highcharts: "lib/highcharts-release/highcharts",
-      highmaps: "lib/highmaps/modules/map",
-      highcharts_funnel:"lib/highcharts-release/modules/funnel",
       pnotify: "vendor/pnotify/pnotify.core",
       'pnotify.buttons': "vendor/pnotify/pnotify.buttons",
       'pnotify.nonblock': "vendor/pnotify/pnotify.nonblock",
       'visualcaptcha.jquery':'vendor/visualcaptcha.jquery/visualcaptcha.jquery',
       validate: "lib/jquery.validation/dist/jquery.validate.min",
       scrollTo:"lib/jquery.scrollTo/jquery.scrollTo.min",
-      tinyMCE:"../tinymce/js/tinymce/tinymce.full.min",
       pace:"lib/pace/pace.min",
       "jquery-sortable":"lib/jquery-sortable/source/js/jquery-sortable-min",
-      tooltipster:"lib/tooltipster/js/jquery.tooltipster.min",
-      maskinput:"lib/jquery.maskedinput/dist/jquery.maskedinput",
-      inputmask:"lib/jquery.inputmask/dist/jquery.inputmask.bundle",
-      rangeslider:"lib/nouislider/distribute/jquery.nouislider.min",
-      colpick:"vendor/colpick/js/colpick",
-
-      codemirror:"vendor/codemirror/codemirror",
-      "codemirror-showhint":"vendor/codemirror/show-hint",
-      "codemirror-lint":"vendor/codemirror/lint",
-      "codemirror-mode-hql":"vendor/codemirror/mode-hql",
-      "codemirror-hint-hql":"vendor/codemirror/hint-hql",
-      "codemirror-lint-hql":"vendor/codemirror/lint-hql",
       //common
       basic: "core/basic",
       data: "core/basic/data",
@@ -103,202 +87,150 @@
       spinjs:'lib/spinjs/spin'
     },
     shim: {
-        main: {
-            deps: [],
-            exports: 'main'
-        },
-        jquery: {
-            deps: [],
-            exports: 'jQuery'
-        },
-        'pnotify.buttons':{
-          deps: ['pnotify']
-        },
-        'pnotify.nonblock':{
-          deps: ['pnotify']
-        },
-        spinjs:{
-          deps: ['jquery']
-        },
-        rangeslider: {
-            deps: ['jquery']
-        },
-        colpick: {
-          deps: ['jquery']
-        },
-        maskinput: {
-            deps: ['jquery']
-        },
-        inputmask: {
-          deps: ['jquery']
-        },
-        nicescroll: {
-            deps: ['jquery']
-        },
-        tooltipster:{
-            deps: ['jquery']
-        },
-        'jquery-sortable':{
-            deps: ['jquery']
-        },
-        jquery_event_drag:{
-            deps: ['jquery']
-        },
-        underscore: {
-            deps: [],
-            exports: '_'
-        },
-        backbone: {
-            deps: ['underscore', 'jquery'],
-            exports: 'Backbone'
-        },
-        marionette: {
-            deps: ['backbone'],
-            exports: 'Marionette'
-        },
-        wreqr: {
-            deps: ['backbone']
-        },
-        easing:{
-            deps: ['jquery'],
-            exports: 'easing'
-        },
-        i18n: {
-            deps: ['jquery'],
-            exports: 'i18n'
-        },
-        scrollTo: {
-            deps: ['jquery']
-        },
-        slickgrid_core: {
-            deps: ['jquery'],
-            exports: 'slickgrid_core'
-        },
-        slickgrid: {
-            deps: ['jquery_ui', 'slickgrid_core', 'jquery_event_drag'],
-            exports: 'Slick'
-        },
-        slick_rowselect: {
-            deps: ['slickgrid']
-        },
-        slick_checkbox: {
-            deps: ['slickgrid']
-        },
-        highcharts: {
-            deps: ["jquery"],
-            exports: 'Highcharts'
-        },
-        highmaps: {
-          deps: ["highcharts"],
-          exports: 'Highcharts'
-        },
-        highcharts_funnel: {
-            deps: ['highcharts'],
-            exports: 'highcharts'
-        },
-        tinyMCE: {
-            exports: 'tinyMCE',
-            init: function () {
-                this.tinyMCE.DOM.events.domLoaded = true;
-                return this.tinyMCE;
-            }
-        },
-        moment:{
-            exports: 'moment',
-            init: function () {
-                window.moment = this.moment;
-                return this.moment;
-            }
-        },
-        'moment-timezone':{
-            deps: ['moment'],
-            exports: 'moment-timezone'
-        },
-        semanticui:{
-            deps: ['jquery']
-        },
-        semanticui_accordion: {
-            deps: ['jquery']
-        },
-        semanticui_api: {
-            deps: ['jquery']
-        },
-        semanticui_checkbox: {
-            deps: ['jquery']
-        },
-        semanticui_dimmer: {
-            deps: ['jquery']
-        },
-        semanticui_dropdown: {
-            deps: ['jquery']
-        },
-        semanticui_form: {
-            deps: ['jquery']
-        },
-        semanticui_nag: {
-            deps: ['jquery']
-        },
-        semanticui_popup: {
-            deps: ['jquery']
-        },
-        semanticui_progress: {
-            deps: ['jquery']
-        },
-        semanticui_rating: {
-            deps: ['jquery']
-        },
-        semanticui_search: {
-            deps: ['jquery']
-        },
-        semanticui_dropdown2: {
-            deps: ['jquery']
-        },
-        semanticui_shape: {
-            deps: ['jquery']
-        },
-        semanticui_sidebar: {
-            deps: ['jquery']
-        },
-        semanticui_site: {
-            deps: ['jquery']
-        },
-        semanticui_state: {
-            deps: ['jquery']
-        },
-        semanticui_tab: {
-            deps: ['jquery']
-        },
-        semanticui_transition: {
-            deps: ['jquery']
-        },
-        semanticui_video: {
-            deps: ['jquery']
-        },
-        semanticui_visibility: {
-            deps: ['jquery']
-        },
-        semanticui_modal:{
-            deps: ['semanticui_transition','semanticui_dimmer'],
-            exports: 'semanticui_modal'
-        },
-        jsonview:{
-            deps: ['jquery']
-        },
-        "codemirror-showhint":{
-          deps: ['codemirror']
-        },
-        "codemirror-lint":{
-          deps: ['codemirror']
-        },
-        "codemirror-mode-hql":{
-          deps: ['codemirror']
-        },
-        "codemirror-hint-hql":{
-          deps: ["codemirror-showhint"]
-        },
-        "codemirror-lint-hql":{
-          deps: ["codemirror-lint"]
-        }
+      main: {
+        deps: [],
+        exports: 'main'
+      },
+      jquery: {
+        deps: [],
+        exports: 'jQuery'
+      },
+      'pnotify.buttons':{
+        deps: ['pnotify']
+      },
+      'pnotify.nonblock':{
+        deps: ['pnotify']
+      },
+      nicescroll: {
+        deps: ['jquery']
+      },
+      'jquery-sortable':{
+        deps: ['jquery']
+      },
+      jquery_event_drag:{
+        deps: ['jquery']
+      },
+      underscore: {
+        deps: [],
+        exports: '_'
+      },
+      backbone: {
+        deps: ['underscore', 'jquery'],
+        exports: 'Backbone'
+      },
+      marionette: {
+        deps: ['backbone'],
+        exports: 'Marionette'
+      },
+      wreqr: {
+        deps: ['backbone']
+      },
+      easing:{
+        deps: ['jquery'],
+        exports: 'easing'
+      },
+      i18n: {
+        deps: ['jquery'],
+        exports: 'i18n'
+      },
+      scrollTo: {
+        deps: ['jquery']
+      },
+      slickgrid_core: {
+        deps: ['jquery'],
+        exports: 'slickgrid_core'
+      },
+      slickgrid: {
+        deps: ['jquery_ui', 'slickgrid_core', 'jquery_event_drag'],
+        exports: 'Slick'
+      },
+      slick_rowselect: {
+        deps: ['slickgrid']
+      },
+      slick_checkbox: {
+        deps: ['slickgrid']
+      },
+      moment:{
+        exports: 'moment',
+        init: function () {
+window.moment = this.moment;
+return this.moment;
+}
+},
+'moment-timezone':{
+deps: ['moment'],
+exports: 'moment-timezone'
+},
+semanticui:{
+deps: ['jquery']
+},
+semanticui_accordion: {
+deps: ['jquery']
+},
+semanticui_api: {
+deps: ['jquery']
+},
+semanticui_checkbox: {
+deps: ['jquery']
+},
+semanticui_dimmer: {
+deps: ['jquery']
+},
+semanticui_dropdown: {
+deps: ['jquery']
+},
+semanticui_form: {
+deps: ['jquery']
+},
+semanticui_nag: {
+deps: ['jquery']
+},
+semanticui_popup: {
+deps: ['jquery']
+},
+semanticui_progress: {
+deps: ['jquery']
+},
+semanticui_rating: {
+deps: ['jquery']
+},
+semanticui_search: {
+deps: ['jquery']
+},
+semanticui_dropdown2: {
+deps: ['jquery']
+},
+semanticui_shape: {
+deps: ['jquery']
+},
+semanticui_sidebar: {
+deps: ['jquery']
+},
+semanticui_site: {
+deps: ['jquery']
+},
+semanticui_state: {
+deps: ['jquery']
+},
+semanticui_tab: {
+deps: ['jquery']
+},
+semanticui_transition: {
+deps: ['jquery']
+},
+semanticui_video: {
+deps: ['jquery']
+},
+semanticui_visibility: {
+deps: ['jquery']
+},
+semanticui_modal:{
+deps: ['semanticui_transition','semanticui_dimmer'],
+exports: 'semanticui_modal'
+},
+jsonview:{
+deps: ['jquery']
+}
     },
   removeCombined: true,
   //    generateSourceMaps: true,
@@ -330,15 +262,9 @@
       name:'pluginModule',
       include:[
         "jquery", "nicescroll", "store2", "jquery_ui", "easing", "jquery_event_drag", "slickgrid_core",
-        "slickgrid", "slick_rowselect", "slick_checkbox","inputmask",
-        "zeroclipboard", "highcharts", "highcharts_funnel", "visualcaptcha.jquery", "validate", "scrollTo", "tinyMCE",
-        "jquery-sortable", "tooltipster","highmaps","rangeslider","colpick","jsonview",
-        "codemirror",
-        "codemirror-showhint",
-        "codemirror-lint",
-        "codemirror-mode-hql",
-        "codemirror-hint-hql",
-        "codemirror-lint-hql",
+        "slickgrid", "slick_rowselect", "slick_checkbox",
+        "zeroclipboard", "visualcaptcha.jquery", "validate", "scrollTo",
+        "jquery-sortable","jsonview",
         "semanticui",
         "semanticui_accordion",
         "semanticui_checkbox",
@@ -399,41 +325,6 @@
       exclude: ['pluginModule','extra']
     },
     {
-      name:'userpermissionMain',
-      include: ['modules/userpermission/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'issuesMain',
-      include: ['modules/issues/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'faqMain',
-      include: ['modules/faq/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'analyticsMain',
-      include: ['modules/analytics/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'gameanalysisMain',
-      include: ['modules/gameanalysis/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-     {
-      name:'cloudconfigMain',
-      include: ['modules/cloudconfig/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'cloudcodeMain',
-      include: ['modules/cloudcode/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
       name:'clouddataMain',
       include: ['modules/clouddata/bootstrapper'],
       exclude: ['pluginModule','extra']
@@ -441,46 +332,6 @@
     {
       name:'settingsMain',
       include: ['modules/settings/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'billingMain',
-      include: ['modules/billing/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'apiusageMain',
-      include: ['modules/apiusage/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'marketingMain',
-      include: ['modules/marketing/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'offlineanalysisMain',
-      include: ['modules/offlineanalysis/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'subscriptionMain',
-      include: ['modules/subscription/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'messageMain',
-      include: ['modules/message/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'gamemasterMain',
-      include: ['modules/gamemaster/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-      name:'usersMain',
-      include: ['modules/users/bootstrapper'],
       exclude: ['pluginModule','extra']
     },
     {
@@ -497,16 +348,6 @@
       name: 'forgotMain',
       include: ['forgotMain','jquery', 'validate', 'Cookie', 'U', 'language', 'Logger','core/functions/UI','API'],
       exclude: ['pluginModule','extra']
-    },
-    {
-      name:'maxpayMain',
-      include: ['modules/maxpay/bootstrapper'],
-      exclude: ['pluginModule','extra']
-    },
-    {
-        name:'productMain',
-        include: ['modules/product/bootstrapper'],
-        exclude: ['pluginModule','extra']
     }
   ]
 }
