@@ -1,0 +1,105 @@
+@mixin IconRemove(){
+  cursor:pointer;
+  color:$lightFontColor;
+  line-height: 38px;
+  position: absolute;
+  right: 0;
+  &:hover{
+    color:$blue;
+  }
+}
+
+@mixin list(){
+  list-style: none;
+  margin:0;
+  padding:0;
+}
+
+@mixin flex(){
+  display:-webkit-flex;
+  display:flex;
+}
+
+@mixin font-smoothing(){
+  font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+}
+
+@mixin ellipsis(){
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin background-size($size){
+  -webkit-background-size: $size;
+  -moz-background-size: $size;
+  background-size: $size;
+}
+
+@mixin sortplaceholder(){
+  display: block;
+  position: relative;
+  margin: 0;
+  padding: 0;
+  border: none!important;
+  &:before{
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 5px solid transparent;
+    border-left-color: red;
+    margin-top: -5px;
+    border-right: none;
+  }
+}
+
+@mixin sprite($sprite) {
+  @extend .sicon;
+  @include sprite-position($sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: inline-block;
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+@mixin no-data-view-body(){
+
+}
+
+@mixin keyframes($animation-name) {
+  @-webkit-keyframes #{$animation-name} {
+    @content;
+  }
+  @-moz-keyframes #{$animation-name} {
+    @content;
+  }
+  @-o-keyframes #{$animation-name} {
+    @content;
+  }
+  @keyframes #{$animation-name} {
+    @content;
+  }
+}
+
+@mixin animation($str) {
+  -webkit-animation: #{$str};
+}
+
+
+@mixin linear-gradient($arg...){
+
+  background:linear-gradient($arg);
+  /* Firefox 3.6+ */ 
+  background: -moz-linear-gradient($arg); 
+  /* Safari 4-5, Chrome 1-9 */ 
+  // background: -webkit-gradient(linear, left top, right top, from(#ace), color-stop(0.25, #f96), color-stop(0.5, #ace), color-stop(0.75, #f96), to(#ace)); 
+  /* Safari 5.1+, Chrome 10+ */ 
+  background: -webkit-linear-gradient($arg); 
+  /* Opera 11.10+ */ 
+  background: -o-linear-gradient($arg);
+
+}

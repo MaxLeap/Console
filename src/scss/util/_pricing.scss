@@ -1,0 +1,158 @@
+.pricing #header {
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.24);
+  background-color: #fff;
+}
+.pricing #header a {
+  color: #373a41;
+}
+.pricing #header #toggle-navbar span {
+  background-color: #3b4b57;
+}
+.pricing #header #navbar > li.dropdown .dropdown-menu {
+  background-color: #fff;
+}
+.pricing #header #navbar > li.dropdown .dropdown-menu a {
+  color: #373a41;
+}
+.pricing .pricing-header {
+  padding: 70px 0 30px 0;
+  text-align: center;
+}
+.pricing .pricing-header h1 {
+  font-size: 40px;
+}
+.pricing .pricing-header p {
+  margin: 20px 0;
+  font-size: 20px;
+}
+.pricing .pricing-content {
+  font-size: 0;
+  max-width: 1200px;
+  margin: 0 auto 180px auto;
+}
+.pricing .pricing-content .pricebox-wrapper {
+  display: inline-block;
+  vertical-align: top;
+  width: 25%;
+  border-bottom: 7px solid green;
+  background-color: #fff;
+  -webkit-transition: 0.2s ease-out -webkit-transform, height, box-shadow;
+  transition: 0.2s ease-out transform, height, box-shadow;
+}
+.pricing .pricing-content .pricebox-wrapper.starter .pricebox, .pricing .pricing-content .pricebox-wrapper.pro .pricebox, .pricing .pricing-content .pricebox-wrapper.business .pricebox {
+  border-right-width: 0;
+}
+.pricing .pricing-content .pricebox-wrapper.starter {
+  border-bottom-color: #009788;
+}
+.pricing .pricing-content .pricebox-wrapper.starter h3, .pricing .pricing-content .pricebox-wrapper.starter h4, .pricing .pricing-content .pricebox-wrapper.starter h5 {
+  color: #009788;
+}
+.pricing .pricing-content .pricebox-wrapper.starter .action_button {
+  visibility: hidden;
+  background-color: #009788;
+}
+.pricing .pricing-content .pricebox-wrapper.starter .action_button:hover {
+  background-color: #00645a !important;
+}
+.pricing .pricing-content .pricebox-wrapper.pro {
+  border-bottom-color: #0AA1DA;
+}
+.pricing .pricing-content .pricebox-wrapper.pro h3, .pricing .pricing-content .pricebox-wrapper.pro h4, .pricing .pricing-content .pricebox-wrapper.pro h5 {
+  color: #0AA1DA;
+}
+.pricing .pricing-content .pricebox-wrapper.pro .action_button {
+  visibility: hidden;
+  background-color: #0AA1DA;
+}
+.pricing .pricing-content .pricebox-wrapper.pro .action_button:hover {
+  background-color: #087da9 !important;
+}
+.pricing .pricing-content .pricebox-wrapper.business {
+  border-bottom-color: #005AAE;
+}
+.pricing .pricing-content .pricebox-wrapper.business h3, .pricing .pricing-content .pricebox-wrapper.business h4, .pricing .pricing-content .pricebox-wrapper.business h5 {
+  color: #005AAE;
+}
+.pricing .pricing-content .pricebox-wrapper.business .action_button {
+  visibility: hidden;
+  background-color: #005AAE;
+}
+.pricing .pricing-content .pricebox-wrapper.business .action_button:hover {
+  background-color: #00407b !important;
+}
+.pricing .pricing-content .pricebox-wrapper.enterprise {
+  border-bottom-color: #232A86;
+}
+.pricing .pricing-content .pricebox-wrapper.enterprise h3, .pricing .pricing-content .pricebox-wrapper.enterprise h4, .pricing .pricing-content .pricebox-wrapper.enterprise h5 {
+  color: #232A86;
+}
+.pricing .pricing-content .pricebox-wrapper.enterprise .action_button {
+  visibility: hidden;
+  background-color: #232A86;
+}
+.pricing .pricing-content .pricebox-wrapper.enterprise .action_button:hover {
+  background-color: #181d5e !important;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox {
+  padding: 80px 20px 50px 20px;
+  border: 1px solid #E2DFDF;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .header h3 {
+  font-size: 24px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .header h4 {
+  font-size: 22px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .section {
+  height: 130px;
+  margin-top: 20px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .section h5 {
+  font-size: 20px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .section ul {
+  margin-top: 5px;
+  font-size: 18px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .section.features {
+  height: 450px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .footer {
+  font-size: 20px;
+}
+.pricing .pricing-content .pricebox-wrapper .pricebox .footer .action_button {
+  width: 155px;
+  margin: 0 auto;
+}
+.pricing.no-touch .pricing-content .pricebox-wrapper:hover {
+  height: 1220px;
+  -webkit-transform: translateY(-20px);
+  -ms-transform: translateY(-20px);
+  transform: translateY(-20px);
+  margin-bottom: -100px;
+  box-shadow: 0 1px 37px rgba(0, 0, 0, 0.34);
+}
+.pricing.no-touch .pricing-content .pricebox-wrapper:hover .pricebox {
+  border: none;
+}
+.pricing.no-touch .pricing-content .pricebox-wrapper:hover + .pricebox-wrapper .pricebox {
+  border-left: none;
+}
+.pricing.no-touch .pricing-content .pricebox-wrapper:hover .action_button {
+  visibility: visible;
+}
+.pricing #footer {
+  display: block;
+}
+@media screen and (max-width: 879px) {
+  .pricing .pricing-content {
+    max-width: calc(100% - 40px);
+  }
+  .pricing .pricing-content .pricebox-wrapper {
+    width: 50%;
+  }
+  .pricing .pricing-content .pricebox-wrapper.pro .pricebox {
+    border-right-width: 1px;
+  }
+}

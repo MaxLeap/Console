@@ -1,0 +1,50 @@
+<% include ../public/header.html %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/prelogin.css" media="screen">
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/regnotifyMain.js"></script>
+</head>
+<body>
+<!-- BEGIN CONTAINER -->
+<!--注册相关的邮件通知页面-->
+<div id="regnotify"  class="container-fluid prelogin-pannel login prelogin-content" view-root>
+    <form method="post" id="send_email">
+        <div id="send_email_success" class="hide"> 
+        <i class="icon-success"></i>
+            <div class="control-group prelogin-tip prelogin-tip-login">
+                <p data-i18n="prelogin.send-regemail.success-tip"></p>
+
+            </div>
+        </div>
+
+        <div id="send_email_fail" class="hide">
+            <i class="icon-fail"></i>
+            <div class="control-group prelogin-tip prelogin-tip-login">
+                <p data-i18n="prelogin.send-regemail.fail-tip"></p>
+            </div>
+        </div>
+        <div id="send_email_unknown" class="hide">
+            <i class="icon-fail"></i>
+            <div class="control-group prelogin-tip prelogin-tip-login">
+                <p data-i18n="prelogin.send-regemail.unknown-tip"></p>
+            </div>
+        </div>
+        <div class="control-group">
+            <input id="email" autocapitalize="off" autocomplete="off" class="form-control accountInput" data-i18n="[placeholder]prelogin.common.email" type="email" name="email" required autofocus>
+            <div class="error-promote">
+                <label for="email" class="error"></label>
+            </div>
+        </div>
+        <div class="control-group">
+            <button id="resend" class="prelogin-submit-btn" type="submit">
+                <span class="text" data-i18n="prelogin.sendemail.resend"></span>
+                <div class="circle"></div>
+            </button>
+        </div>
+    </form>
+
+    
+    
+</div>
+<!-- END CONTAINER -->
+<% include ../public/footer.html %>

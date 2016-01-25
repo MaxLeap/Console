@@ -1,0 +1,336 @@
+@font-face {
+  font-family: 'icomoon';
+  src:url('/fonts/icomoon.ttf?aznl7g') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+[class^="icomoon-"], [class*=" icomoon-"] {
+  font-family: 'icomoon';
+  speak: none;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.icomoon{
+  font-size:20px;
+  vertical-align: middle;
+}
+
+.ui.button>.icomoon{
+  font-size:1em;
+  display: inline-block;
+  margin-right: 2px;
+  vertical-align: top;
+}
+
+.icomoon-message:before {
+  content: "\e600";
+}
+.icomoon-dollars:before {
+  content: "\e601";
+}
+.icomoon-useri:before {
+  content: "\e602";
+}
+.icomoon-useradm:before {
+  content: "\e603";
+}
+.icomoon-logout:before {
+  content: "\e604";
+}
+.icomoon-attach:before {
+  content: "\e605";
+}
+.icomoon-plus:before {
+  content: "\e606";
+}
+.icomoon-minus:before {
+  content: "\e607";
+}
+.icomoon-refresh:before {
+  content: "\e608";
+}
+.icomoon-table:before {
+  content: "\e609";
+}
+.icomoon-filter:before {
+  content: "\e60a";
+}
+.icomoon-expand:before {
+  content: "\e60b";
+}
+.icomoon-menu:before {
+  content: "\e60c";
+}
+.icomoon-usage:before {
+  content: "\e60d";
+}
+.icomoon-dashboard:before {
+  content: "\e60e";
+}
+.icomoon-trends:before {
+  content: "\e60f";
+}
+.icomoon-retention:before {
+  content: "\e610";
+}
+.icomoon-apiusage:before {
+  content: "\e611";
+}
+.icomoon-general:before {
+  content: "\e612";
+}
+.icomoon-logs:before {
+  content: "\e613";
+}
+.icomoon-payment:before {
+  content: "\e614";
+}
+.icomoon-notification:before {
+  content: "\e615";
+}
+.icomoon-terminal:before {
+  content: "\e616";
+}
+.icomoon-useraction:before {
+  content: "\e617";
+}
+.icomoon-config:before {
+  content: "\e618";
+}
+.icomoon-engagement:before {
+  content: "\e619";
+}
+.icomoon-iap:before {
+  content: "\e61a";
+}
+.icomoon-jobs:before {
+  content: "\e61b";
+}
+.icomoon-coin:before {
+  content: "\e61c";
+}
+.icomoon-prop:before {
+  content: "\e61d";
+}
+.icomoon-authentication:before {
+  content: "\e61e";
+}
+.icomoon-devcenter:before {
+  content: "\e61f";
+}
+.icomoon-analytics:before {
+  content: "\e620";
+}
+.icomoon-bell2:before {
+  content: "\e621";
+}
+.icomoon-marketing:before {
+  content: "\e622";
+}
+.icomoon-setting:before {
+  content: "\e623";
+}
+.icomoon-faq:before {
+  content: "\e624";
+}
+.icomoon-issues:before {
+  content: "\e625";
+}
+.icomoon-data:before {
+  content: "\e626";
+}
+.icomoon-email:before {
+  content: "\e627";
+}
+.icomoon-support:before {
+  content: "\e628";
+}
+.icomoon-user:before {
+  content: "\e629";
+}
+.icomoon-receipt:before {
+  content: "\e62a";
+}
+.icomoon-roles:before {
+  content: "\e62b";
+}
+.icomoon-query:before {
+  content: "\e62c";
+}
+.icomoon-management:before {
+  content: "\e62d";
+}
+.icomoon-segment:before {
+  content: "\e62e";
+}
+.icomoon-active:before {
+  content: "\e62f";
+}
+.icomoon-deactive:before {
+  content: "\e630";
+}
+.icomoon-mission:before {
+  content: "\e631";
+}
+.icomoon-unarchive:before {
+  content: "\e632";
+}
+.icomoon-archive:before {
+  content: "\e633";
+}
+.icomoon-game2:before {
+  content: "\e634";
+}
+.icomoon-earth:before {
+  content: "\e635";
+}
+.icomoon-appicon:before {
+  content: "\e636";
+}
+.icomoon-calendar:before {
+  content: "\e637";
+}
+.icomoon-compare:before {
+  content: "\e638";
+}
+.icomoon-game:before {
+  content: "\e639";
+}
+.icomoon-billing:before {
+  content: "\e63a";
+}
+.icomoon-useradmin:before {
+  content: "\e63b";
+}
+.icomoon-picture:before {
+  content: "\e63c";
+}
+.icomoon-inprogress:before {
+  content: "\e63d";
+}
+.icomoon-userinfo:before {
+  content: "\e63e";
+}
+.icomoon-closed:before {
+  content: "\e63f";
+}
+.icomoon-resolved:before {
+  content: "\e640";
+}
+.icomoon-rejected:before {
+  content: "\e641";
+}
+.icomoon-new:before {
+  content: "\e642";
+}
+.icomoon-help:before {
+  content: "\e643";
+}
+.icomoon-time:before {
+  content: "\e644";
+}
+.icomoon-oldest:before {
+  content: "\e645";
+}
+.icomoon-latest:before {
+  content: "\e646";
+}
+.icomoon-arrow:before {
+  content: "\e647";
+}
+.icomoon-orgprofile:before {
+  content: "\e648";
+}
+.icomoon-installation:before {
+  content: "\e649";
+}
+.icomoon-relation:before {
+  content: "\e64a";
+}
+.icomoon-class:before {
+  content: "\e64b";
+}
+.icomoon-file:before {
+  content: "\e64c";
+}
+.icomoon-back:before {
+  content: "\e65a";
+}
+.icomoon-offline-analysis:before {
+  content: "\e800";
+}
+.icomoon-download:before {
+  content: "\e801";
+}
+.icomoon-cancel:before {
+  content: "\e804";
+}
+.icomoon-attention-circled:before {
+  content: "\e805";
+}
+.icomoon-down-dir:before {
+  content: "\e80d";
+}
+.icomoon-ok-circled:before {
+  content: "\e810";
+}
+.icomoon-quit-fullscreen:before {
+  content: "\e900";
+}
+.icomoon-subscription:before {
+  content: "\e901";
+}
+.icomoon-transaction:before {
+  content: "\e903";
+}
+.icomoon-webhook-test:before {
+  content: "\e905";
+}
+.icomoon-maxpay:before {
+  content: "\e907";
+}
+.icomoon-viewtext:before {
+  content: "\e908";
+}
+.icomoon-maxpay-channel:before {
+  content: "\e909";
+}
+.icomoon-webhook:before {
+  content: "\e90a";
+}
+.icomoon-analysis:before {
+  content: "\e902";
+}
+.icomoon-develop:before {
+  content: "\e904";
+}
+.icomoon-promotion:before {
+  content: "\e906";
+}
+.icomoon-operation:before {
+  content: "\e90b";
+}
+.icomoon-coupon:before {
+  content: "\e90c";
+}
+.icomoon-weixin:before {
+  content: "\e802";
+}
+.icomoon-weibo:before {
+  content: "\e803";
+}
+.icomoon-contact:before {
+  content: "\e90d";
+}
+.icomoon-buy-success:before {
+  content: "\e90e";
+}

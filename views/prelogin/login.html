@@ -1,0 +1,73 @@
+<% include ../public/header.html %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/prelogin.css" media="screen">
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/loginMain.js"></script>
+</head>
+<body>
+<!-- BEGIN CONTAINER -->
+
+<div class="container-fluid prelogin-pannel login prelogin-content" view-root>
+
+    <form id="form-login" class="form-login" role="form" novalidate>
+
+        <div class="prelogin-logo" data-i18n="prelogin.title.signin"></div>
+
+        <div class="control-group">
+            <input id="username" autocapitalize="off" autocomplete="off" type="text" minlength="6"
+                   name="username"
+                   class="form-control accountInput" required
+                   autofocus value="" data-i18n="[placeholder]prelogin.common.email"  >
+
+            <div class="error-promote">
+                <label for="username" class="error"></label>
+            </div>
+        </div>
+
+        <div class="control-group">
+            <input id="password" autocapitalize="off" autocomplete="off" type="password" minlength="8"
+                   name="password"
+                   class="form-control" data-i18n="[placeholder]prelogin.common.password"  required value="">
+
+            <div class="error-promote">
+                <label for="password" class="error"></label>
+            </div>
+        </div>
+
+        <div class="prelogin-captcha control-group">
+            <div class="default-text" data-i18n="prelogin.tips.loading-captcha"></div>
+            <div class="captcha-warpper">
+                <input id="captcha" autocapitalize="off" autocomplete="off"
+                   class="form-control" data-i18n="[placeholder]prelogin.common.captcha" type="text" name="captcha" required maxlength="6" minlength="6">
+                <img id="captcha_img" class="captcha_img"  alt="">
+            </div>
+            <div class="error-promote">
+                <label for="captcha" class="error"></label>
+            </div>
+        </div>
+
+        <div class="options control-group">
+            <div class="checkbox-inline left">
+                <span class="icon checkbox unchecked"> </span>
+                <span data-i18n="prelogin.tag.remember-me"></span>
+            </div>
+            <div class="right">
+                <a href="/forgot"  data-i18n="prelogin.tag.forgot-password"></a>
+            </div>
+        </div>
+
+        <div class="control-group prelogin-submit-btn-wrapper">
+            <button id="loginBtn" class="prelogin-submit-btn" type="submit" >
+                <span class="text" data-i18n="prelogin.tag.signin"></span>
+                <div class="circle"></div>
+            </button>
+        </div>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <span data-i18n="prelogin.tips.need-account"></span>
+            <a class="link" href="/register" data-i18n="prelogin.tag.register"></a>
+        </div>
+    </form>
+</div>
+<!-- END CONTAINER -->
+<% include ../public/footer.html %>

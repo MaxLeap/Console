@@ -1,0 +1,231 @@
+@charset "UTF-8";
+/**
+这个文件中会有些重复声明来增加权重，目的是为了保持contact弹窗的样式在website, console, blog中的统一性
+*/
+@font-face {
+	font-family: 'Artbrush';
+	src: url("fonts/Artbrush.ttf") format("truetype");
+}
+@keyframes rotateZ{
+	from{
+		transform: rotateZ(0deg);
+	}
+	to{
+		transform: rotateZ(360deg);
+	}
+}
+#side-contact-article{
+	.action_button {
+		display: inline-block;
+		width: 120px;
+		height: 50px;
+		border-radius: 50px;
+		line-height: 50px;
+		color: #fff;
+		background-color: #33b1eb;
+		white-space: nowrap;
+		text-align: center;
+		font-weight: normal;
+		border-color: #33b1eb;
+		position: relative;
+		text-align: center;
+		font-size: 18px;
+		font-weight: bold;
+		display: inline-block;
+	}
+
+	.action_button:hover {
+		background-color: #1599d6 !important;
+		border-color: #1599d6;
+	}
+
+	.action_button:active {
+		border-radius: 50px;
+		background-color: #1389bf !important;
+		border-color: #1389bf;
+	}
+
+	.action_button.loading {
+		background-color: #1389bf !important;
+		border-color: #1389bf;
+	}
+
+	.action_button.loading {
+		pointer-events: none;
+		font-size: 0 !important;
+	}
+
+	.action_button.loading:after {
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		left: 0;
+		right: 0;
+		margin: auto;
+		content: '';
+		width: 1em;
+		height: 1em;
+		-webkit-animation: rotateZ 0.6s linear;
+		animation: rotateZ 0.6s linear;
+		-webkit-animation-iteration-count: infinite;
+		animation-iteration-count: infinite;
+		border-radius: 500rem;
+		border-color: #fff rgba(0, 0, 0, 0.15) rgba(0, 0, 0, 0.15);
+		border-style: solid;
+		border-width: .2em;
+		font-size: 14px;
+	}
+
+	.field .validate_msg {
+		font-size: 14px;
+		color: #f35b5b;
+	}
+}
+
+#side-contact-btn {
+	display: inline-block;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	background-color: #57A3F2;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: normal;
+	border-color: #57A3F2;
+	position: fixed;
+	z-index: 9999;
+	right: 15px;
+	bottom: 12px;
+	font-size: 14px;
+	line-height: 40px;
+	background: rgba(46, 49, 51, 0.6);
+	border-radius: 50%;
+}
+
+#side-contact-btn.loading {
+	background-color: #127cea !important;
+	border-color: #127cea;
+}
+
+#side-contact-article {
+	position: fixed;
+	z-index: 999999;
+	right: 12px;
+	bottom: -500px;
+	padding: 20px;
+	width: 300px;
+	border-radius: 5px;
+	box-shadow: rgba(0, 0, 0, 0.3) 0 10px 60px, rgba(0, 0, 0, 0.1) 0 0 20px;
+	background: #fff;
+	font-size: 14px;
+	-webkit-transition: 0.4s cubic-bezier(0.05, 0.77, 0.52, 1.08);
+	transition: 0.4s cubic-bezier(0.05, 0.77, 0.52, 1.08);
+	opacity: 0;
+}
+
+#side-contact-article.visible {
+	opacity: 1;
+	bottom: 75px;
+}
+
+#side-contact-article .close {
+	float: right;
+	margin-top: -33px;
+	margin-right: -10px;
+	color: #8d9095;
+}
+
+#side-contact-article .side-contact-tail {
+	position: absolute;
+	right: 10px;
+	bottom: -28px;
+	-webkit-transform: scaleX(0.7);
+	-ms-transform: scaleX(0.7);
+	transform: scaleX(0.7);
+	font-size: 49px;
+	color: #fff;
+}
+
+#side-contact-article .contact-form {
+	margin: 15px 0 10px 0;
+	width: 100%;
+}
+
+#side-contact-article h3 {
+	margin: 0;
+	font-weight: normal;
+	text-align: center;
+	font-size: 18px;
+	font-family: arial, sans-serif, 微软雅黑, 黑体;
+	color: #5d5d5d;
+	line-height: 1.4;
+}
+
+#side-contact-article .field {
+	margin-top: 0;
+}
+
+#side-contact-article input, #side-contact-article textarea {
+	padding: 5px 10px;
+	width: 100%;
+	max-width: 100%;
+	border: 1px solid #ddd;
+	border-radius: 0;
+	outline: none;
+	font-size: 12px;
+	background: #fcfcfc;
+}
+
+#side-contact-article input:focus, #side-contact-article textarea:focus {
+	border-color: #cfcfcf;
+	background: #fff;
+	color: #444;
+}
+
+#side-contact-article input {
+	height: 30px;
+}
+
+#side-contact-article textarea {
+	resize: none;
+	height: 162px;
+}
+
+#side-contact-article .message {
+	margin-top: 10px;
+}
+
+#side-contact-article .send-msg-btn {
+	display: inline-block;
+	width: 100px;
+	height: 30px;
+	border-radius: 30px;
+	line-height: 30px;
+	color: #fff;
+	background-color: #4BD083;
+	white-space: nowrap;
+	text-align: center;
+	font-weight: normal;
+	border-color: #4BD083;
+	float: right;
+	font-weight: normal;
+	font-size: 14px;
+}
+
+#side-contact-article .send-msg-btn:hover {
+	background-color: #30b869 !important;
+	border-color: #30b869;
+}
+
+#side-contact-article .send-msg-btn:active {
+	border-radius: 30px;
+	background-color: #2ba45e !important;
+	border-color: #2ba45e;
+}
+
+#side-contact-article .send-msg-btn.loading {
+	background-color: #2ba45e !important;
+	border-color: #2ba45e;
+}
+
+

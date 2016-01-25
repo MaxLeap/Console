@@ -1,0 +1,480 @@
+@import "../bootstrap/tables";
+
+.slick-header.ui-state-default, .slick-headerrow.ui-state-default {
+  width: 100%;
+  overflow: hidden;
+  border-left: 0;
+}
+
+.slick-header-columns, .slick-headerrow-columns {
+  position: relative;
+  white-space: nowrap;
+  cursor: default;
+  overflow: hidden;
+}
+
+.slick-header-column.ui-state-default {
+  position: relative;
+  display: inline-block;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  height: 16px;
+  line-height: 16px;
+  margin: 0;
+  padding: 4px;
+  border-right: 1px solid silver;
+  border-left: 0;
+  border-top: 0;
+  border-bottom: 0;
+  float: left;
+}
+
+.slick-header-column.ui-sortable-handle{
+  background-image:none;
+}
+.slick-headerrow-column.ui-state-default {
+  padding: 4px;
+}
+
+.slick-header-column-sorted {
+  font-style: italic;
+}
+
+.slick-sort-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 5px;
+  margin-left: 4px;
+  margin-top: 6px;
+  float: right;
+}
+
+.slick-resizable-handle {
+  position: absolute;
+  font-size: 0.1px;
+  display: block;
+  cursor: col-resize;
+  width: 4px;
+  right: 0;
+  top: 0;
+  height: 100%;
+}
+
+.slick-sortable-placeholder {
+  background: silver;
+}
+
+.grid-canvas {
+  position: relative;
+  outline: 0;
+}
+
+.slick-row.ui-widget-content, .slick-row.ui-state-active {
+  position: absolute;
+  border: 0;
+  width: 100%;
+}
+
+.slick-cell, .slick-headerrow-column {
+  position: absolute;
+  border: 1px solid transparent;
+  border-right: 1px dotted silver;
+  border-bottom-color: silver;
+  overflow: hidden;
+  -o-text-overflow: ellipsis;
+  text-overflow: ellipsis;
+  vertical-align: middle;
+  z-index: 1;
+  padding: 1px 2px 2px 1px;
+  margin: 0;
+  white-space: nowrap;
+  cursor: default;
+}
+
+.slick-group {
+}
+
+.slick-group-toggle {
+  display: inline-block;
+}
+
+.slick-cell.highlighted {
+  background: lightskyblue;
+  background: rgba(0, 0, 255, 0.2);
+  -webkit-transition: all 0.5s;
+  -moz-transition: all 0.5s;
+  -o-transition: all 0.5s;
+  transition: all 0.5s;
+}
+
+.slick-cell.flashing {
+  border: 1px solid red !important;
+}
+
+.slick-cell.editable {
+  z-index: 11;
+  overflow: visible;
+  background: white;
+  border-color: black;
+  border-style: solid;
+}
+
+.slick-cell:focus {
+  outline: none;
+}
+
+.slick-reorder-proxy {
+  display: inline-block;
+  background: blue;
+  opacity: 0.15;
+  filter: alpha(opacity = 15);
+  cursor: move;
+}
+
+.slick-reorder-guide {
+  display: inline-block;
+  height: 2px;
+  background: blue;
+  opacity: 0.7;
+  filter: alpha(opacity = 70);
+}
+
+.slick-selection {
+  z-index: 10;
+  position: absolute;
+  border: 2px dashed black;
+}
+
+/* Mixins for SlickGrid */
+
+/* Used from variables.less:
+ *
+ * @baseFontSize (unless, font size is passed as an option)
+ * @tableBorder
+ * @linkColor
+ * @tableBackgroundAccent
+ * @textColor
+ * @navbarLinkColorHover
+ *
+ * This means that if you have an updated variable.less, the grid will
+ * follow your changes.
+ *
+ * Example usage:
+ *
+ *
+    @import "variables.less";
+    @import "../bootstrap/slickgrid.less";
+
+    .grid {
+        // Set dimensions
+        height: 380px;  // for 10 rows x 35px
+        width: 800px;
+
+        // Apply all grid styles
+        .SlickGrid();
+
+        // Add a bottom border to the grid.
+        border-bottom: 1px solid @tableBorder;
+    }
+
+ *
+ */
+
+$fontSize:14px;
+$sansFontFamily:'Arial';
+$textColor: $normalFontColor;
+$headerColor:$darkFontColor;
+$tableBorder:transparent;
+$tableHeaderBorder:$borderColor;
+$headerBackground:$tableHeaderBackgroundColor;
+$tableBackground:$white;
+$tableBackgroundAccent:$white;
+
+$slickgridHoverHeaderColor: $black;
+$slickgridSortingHeaderColor: $black;
+$headerColumnHeight:46px;
+$CellHeight:39px;
+$linkColor:$blue;
+$linkColorHover:$blue;
+
+$selectedColor:#f4f6f8;
+
+.slick-row.active{
+  background-color: $selectedColor!important;
+}
+
+@mixin SlickCell () {
+  padding:0 7.5px;
+  font-size: $fontSize;
+  height:$CellHeight;
+  line-height:$CellHeight;
+  border-top:0;
+  border-left:0;
+  border-right:1px solid $tableBorder;
+  box-sizing:content-box!important;
+  color:$textColor;
+  .latitude,.longitude{
+    border:1px solid $light-grey;
+    border-radius:4px;
+    margin:5px 0;
+    height:20px;
+    line-height:20px;
+  }
+  &:last-child{
+    border-right:1px solid transparent;
+  }
+  &.active,&.active.selected{
+    background-color:$white;
+    border-left:1px solid $borderColor;
+    border-right:1px solid $borderColor;
+    >.btn-edit,>.btn-remove{
+      display:block;
+    }
+    &.cell-fixed{
+      >.btn-edit{
+        display:none;
+      }
+    }
+  }
+  &.cell-bool{
+    .ui.radio{
+      margin-right:15px;
+      label:after{
+        top: 2px;
+        left: 1px;
+      }
+    }
+  }
+  &.cell-file{
+    input[type=file]{
+      display:none;
+    }
+  }
+  &.active{
+    padding-right:39px;
+  }
+  &.selected{
+    background-color:$selectedColor;
+  }
+  &.editable{
+    padding-right:0!important;
+    background-color:$white;
+    cursor:pointer;
+  }
+  &.error{
+    border:1px solid $red;
+    background-color:lighten($red,40%);
+  }
+  >.light{
+    color:$darkBorderColor;
+  }
+  >input[type=text]{
+    border:none;
+    width:100%;
+    height:$CellHeight;
+    line-height:$CellHeight;
+    background-color:transparent;
+    &:focus{
+      outline:none;
+    }
+  }
+  >input[type=checkbox]{
+    position:relative;
+    right:6px;
+    top:2px;
+  }
+  >textarea{
+    border:none;
+    width:100%;
+    line-height:$CellHeight;
+    height:$CellHeight;
+    background-color:transparent;
+    resize:none;
+    @include box-sizing(border-box);
+    &:focus{
+      outline:none;
+    }
+  }
+  >.btn-edit,>.btn-remove{
+    display:none;
+    position:absolute;
+    cursor:pointer;
+    color:lighten($normalFontColor,10%);
+    top:0;
+    right:0;
+    height: 39px;
+    width: 39px;
+    margin: 0;
+    &:hover{
+      color: $normalFontColor;
+    }
+  }
+}
+
+@mixin SlickGrid () {
+
+  position: relative;
+
+  // Reset the margin of the checkboxes. The grid
+  // needs a selection checbox column. Bootstrap gives
+  // these elements a 4px top margin, which we have to reset
+  // by aligning to baseline.
+  input[type="checkbox"] {
+    vertical-align: baseline;
+    margin: 0;
+  }
+
+  .slick-viewport {
+    // Add a top border to visually separate the headers.
+    border-top: 1px solid $tableHeaderBorder;
+  }
+
+  .slick-cell-checkboxsel>.ui.checkbox,.slick-column-name>.ui.checkbox{
+    vertical-align: middle;
+    input{
+      margin-left:20px;
+    }
+    label{
+      margin-left:20px;
+      &:before,&:after{
+        width: 15px;
+        height: 15px;
+        box-sizing: border-box;
+      }
+    }
+  }
+
+  .slick-column-name>.ui.checkbox{
+    label{
+      top: -18px;
+    }
+  }
+
+  .grid-canvas {
+    .slick-row {
+      border: 0 none;
+      border-bottom: 1px solid $tableHeaderBorder;
+      position: absolute;
+      width: 100%;
+      height:$CellHeight;
+      @include box-sizing(content-box);
+    }
+    .slick-cell{
+      border:0;
+      //border-top: 0;
+      //border-bottom: 1px solid $tableHeaderBorder;
+      //border-left: 0;
+      //border-right: 0;
+    }
+    .even {
+      background: $tableBackgroundAccent;
+    }
+    .odd {
+      background: $tableBackground;
+    }
+
+    .slick-cell {
+      @include SlickCell();
+      a, a:visited, .ui-widget-content a, .ui-widget-content a:visited {
+        color: $linkColor;
+        text-decoration: none;
+      }
+      a:hover, .ui-widget-content a:hover {
+        color: $linkColorHover;
+        text-decoration: none;
+        border-bottom: none;
+      }
+      table {
+        height: 100%;
+        border: 0 none;
+        padding: 0;
+        background: none;
+      }
+      td {
+        border: 0 none;
+        padding: 0;
+        vertical-align: middle;
+        text-align: left;
+      }
+    }
+  }
+
+  .slick-header {
+    border-top: 1px solid $tableHeaderBorder;
+    background-color: $tableHeaderBackgroundColor;
+    border-bottom: 0;
+  }
+
+  .slick-header-columns {
+    background: $headerBackground;
+
+    input[type=checkbox]{
+      position:relative;
+      right:6px;
+      top:2px;
+    }
+    .slick-header-column {
+      height: $headerColumnHeight;
+      line-height: $headerColumnHeight;
+      padding:0;
+      margin: 0;
+      border: 0;
+      cursor:pointer;
+      .slick-sort-indicator{
+        display:none;
+      }
+      &.ui-state-default {
+        @include SlickCell();
+        height: $headerColumnHeight;
+        line-height: $headerColumnHeight;
+      }
+
+      &.slick-header-column-sorted {
+        font-style: normal;
+        color: $slickgridSortingHeaderColor;
+      }
+      &:hover {
+        color: $slickgridHoverHeaderColor;
+      }
+      .slick-column-name{
+        float:left;
+        color: $headerColor;
+        .light{
+          @include font-smoothing();
+          color: $darkBorderColor;
+          margin-left:10px;
+        }
+      }
+      .slick-sort-indicator{
+        display:inline-block;
+        vertical-align: middle;
+        margin: 0;
+        float:left;
+        &:after {
+          font-style: normal;
+          font-weight: normal;
+          text-decoration: inherit;
+          content: '';
+          height: 1em;
+          width: auto;
+          opacity: .8;
+          margin: 0 0 0 .5em;
+          font-family: 'Icons';
+        }
+      }
+      .slick-sort-indicator-asc:after{
+        content:'\f0d8';
+      }
+
+      .slick-sort-indicator-desc:after{
+        content:'\f0d7';
+      }
+
+    }
+  }
+}
+
+.grid-view{
+  @include SlickGrid();
+}

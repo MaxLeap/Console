@@ -1,0 +1,165 @@
+@import "custom_import";
+
+pre{
+  padding:24px 28px;
+}
+
+#sidebar-background{
+  width:100%;
+  background:url(/images/shape_00.gif) center;
+}
+
+#ios-sdk-page, #android-sdk-page{
+  padding: 50px 100px;
+  background-color: $white;
+  margin: 0 100px;
+  position: relative;
+  min-height: calc(100% - 60px);
+}
+#header-nav{
+  .toggle-notification {
+    border:0;
+    color: #fff;
+  }
+  #info-username {
+    height:60px;
+    color: #fff;
+    padding-right:30px;
+    padding-left:20px;
+    background-color: #56a3f2;
+  }
+  > div:last-child{
+    margin-right:0;
+  }
+}
+#nav-menus{
+  background-color:transparent!important;
+  .module-display-name{
+    display: none;
+  }
+}
+#menu-dropdown,.module-display-name{
+  display:none;
+  opacity: 0;
+}
+.ui.dimmer{
+  background-color: transparent;
+  z-index:0;
+}
+
+.app-button {
+  width: 150px;
+  font-size: 16px;
+  line-height: 25px;
+  display: inline-block;
+  margin:0 20px;
+  &.blue {
+    //@include approundbutton(20px, $blue);
+  }
+  &.green {
+    //@include approundbutton(20px, $green);
+  }
+}
+
+#app-dialog-create-app{
+  width:500px;
+  margin-left: -250px;
+  .content{
+    padding-bottom:0;
+  }
+  .actions{
+    text-align: center;
+    >.ui.button{
+      margin-left:0;
+      background-color: $blue!important;
+      width:420px;
+    }
+  }
+}
+#app-dialog-detail{
+  width:600px;
+  margin-left: -300px;
+  .content{
+    text-align:center;
+    >.header{
+      text-align:left;
+      margin-left:6px;
+      font-size:16px;
+    }
+    >.footer{
+      color:#9a9a9a;
+    }
+  }
+  .ui.form>.field{
+    label{
+      text-align: left;
+      width:100px;
+      float:left;
+    }
+    .ui.input{
+      width:calc(100% - 120px);
+    }
+  }
+}
+
+.copy-btn.zeroclipboard-is-active {
+  background-color:darken($clouds,10%);
+}
+
+.ui.modals{
+  >div>.header{
+    color:$white;
+    background-color:$blue;
+  }
+  .actions{
+    border-top:0;
+    background-color:$white;
+  }
+}
+
+ol li p:first-of-type {
+  margin-top: 34px;
+  margin-bottom: 14px;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+#ios-sdk-page,#android-sdk-page{
+  img{
+    width:90%;
+  }
+}
+
+
+//添加footer
+.container-footer{
+  //@include container-footer();
+  position:absolute;
+  bottom:0;
+  left:0;
+  right:0;
+  background-color:$white;
+  z-index:0;
+  height:50px;
+  >.pull-right{
+    margin-right:30px;
+  }
+  ul{
+    list-style: none;
+    margin:0;
+    padding:0;
+    li{
+      font-size:18px;
+      padding:13px 0;
+      float:left;
+      >a{
+        display: block;
+        padding:0 20px;
+        color:#9a9a9a;
+        border-right:1px solid #9a9a9a;
+      }
+      &:last-child>a{
+        border-right:0;
+      }
+    }
+  }
+}

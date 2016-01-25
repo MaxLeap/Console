@@ -1,0 +1,54 @@
+<script type="text/javascript">
+    function gh(){
+        var lang = localStorage.getItem('language');
+        if(lang)lang=lang.replace(/"/g,'');
+        lang = (lang=='zh'||lang=='tw')?'zh_cn':'en_us';
+        window.location.pathname = '/'+(lang?(lang+'/index.html'):'');
+    }
+</script>
+
+<div id="header-nav">
+    <a id="logo" class="pull-left" href="/"></a>
+    <div id="module-menu" class="pull-left">
+        <i class="icomoon icomoon-menu"></i>
+        <div class="menu-content"></div>
+    </div>
+
+    <div id="user-menu" class="ui dropdown pull-right" tabindex="0">
+        <div class="text">
+            <i class="icomoon icomoon-user"></i>
+        </div>
+        <div class="menu" tabindex="-1">
+            <div class="item profile">
+                <a href="/profile">
+                    <i class="icomoon icomoon-useri"></i><span data-i18n="common.module.profile"></span>
+                </a>
+            </div>
+            <div class="item logout">
+                <a href="javascript:void(0)">
+                    <i class="icomoon icomoon-logout"></i><span data-i18n="common.title.logout"></span>
+                </a>
+            </div>
+        </div>
+    </div>
+
+    <div id="language-menu" class="ui dropdown pull-right" tabindex="0">
+        <div class="text">
+            <i class="icomoon icomoon-earth"></i>
+        </div>
+        <div class="menu" tabindex="-1">
+            <div class="item" data-value="en">
+                <i class="us flag"></i>
+                <a href="javascript:void(0)">English</a>
+            </div>
+            <div class="item" data-value="zh">
+                <i class="cn flag"></i>
+                <a href="javascript:void(0)">中文</a>
+            </div>
+            <div class="item" data-value="jp" style="display: none;">
+                <i class="jp flag"></i>
+                <a href="javascript:void(0)">日本語</a>
+            </div>
+        </div>
+    </div>
+</div>

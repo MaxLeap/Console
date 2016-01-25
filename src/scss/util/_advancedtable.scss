@@ -1,0 +1,42 @@
+.portlet-title{
+  @include clearfix();
+  margin-bottom:10px;
+  height: 25px;
+
+  >.caption{
+    color:$formHeaderFontColor;
+    font-size:$formHeaderFontSize;
+    float:left;
+    min-height:$formHeaderFontSize;
+  }
+  >.sem-helper-tip{
+    float:left;
+  }
+}
+
+.portlet{
+  position: relative;
+  .pagination{
+    @include clearfix();
+    margin-top:30px;
+
+    .buttons>.button{
+      padding: .78571429em;
+    }
+  }
+
+  .grid-view{
+    position:relative;
+  }
+
+  .page.buttons>.page-status{
+    cursor:auto!important;
+  }
+
+  .page.buttons>.page-status:active{
+    background-color: $white!important;
+  }
+  td>.link{
+    color:$blue;
+  }
+}

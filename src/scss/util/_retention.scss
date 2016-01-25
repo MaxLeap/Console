@@ -1,0 +1,80 @@
+.retention-view>.chart-content{
+  display:flex;
+  display:-webkit-flex;
+  .retention_row{
+    @include clearfix();
+    .retention_grid{
+      color:$normalFontColor;
+      float:left;
+      padding:10px;
+      text-align:center;
+    }
+  }
+  .info_bar{
+    .retention_header{
+      .retention_row{
+      }
+      .retention_grid{
+        color:$normalFontColor;
+      }
+    }
+    .retention_body{
+      .retention_row{
+
+      }
+      .retention_grid{
+
+      }
+    }
+  }
+  .data_content{
+    flex:1;
+    -webkit-flex:1;
+    overflow-x:auto;
+    overflow-y:visible;
+    padding-left:20px;
+    .retention_body{
+      .retention_grid{
+        position:relative;
+        float:left;
+        padding:0;
+        cursor:pointer;
+        >.content{
+          padding:10px;
+          @include transition(transform .2s ease-out);
+        }
+        &:hover{
+          z-index:$tooltipZIndex;
+          >.content{
+            @include box-shadow(0 0 1px 2px $white);
+            transform:scale(1.2);
+          }
+        }
+      }
+    }
+  }
+}
+
+.retention-view>.tip{
+  z-index: $contentZIndex;
+  color:$white;
+  background-color:$tooltipBackgroundColor;
+  width:250px;
+  height:80px;
+  white-space:initial;
+  text-align:left;
+  padding:10px 20px;
+  position:fixed;
+  top:0;
+  left:0;
+  &:before{
+    content:'';
+    position:absolute;
+    top:100%;
+    margin-left:-5px;
+    left:50%;
+    border-top:5px solid $tooltipBackgroundColor;
+    border-left:5px solid transparent;
+    border-right:5px solid transparent;
+  }
+}

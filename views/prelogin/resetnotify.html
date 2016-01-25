@@ -1,0 +1,58 @@
+<% include ../public/header.html %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/prelogin.css" media="screen">
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/resetnotifyMain.js"></script>
+</head>
+<body>
+<!-- BEGIN CONTAINER -->
+<!--重置密码的邮件通知页面-->
+<div id="resetnotify"  class="container-fluid prelogin-pannel login prelogin-content" view-root>
+    <form method="post" id="send_email">
+        <div id="send_email_success" class="hide"> 
+        <i class="icon-success"></i>
+            <h1 class="prelogin-title" data-i18n="common.success.default"></h1>
+            <div class="control-group prelogin-tip prelogin-tip-login">
+                <p data-i18n="prelogin.sendreset.success-tip"></p>
+            </div>
+        </div>
+        
+        <div id="send_email_fail" class="hide">
+            <i class="icon-fail"></i>
+            <h1 class="prelogin-title" data-i18n="common.fail.default"></h1>
+            <div class="control-group prelogin-tip prelogin-tip-login">
+                <p data-i18n="prelogin.sendreset.fail-tip"></p>
+            </div>
+            
+        </div>
+
+        <div class="control-group">
+            <input id="email" autocapitalize="off" autocomplete="off" class="form-control accountInput" data-i18n="[placeholder]prelogin.common.email" type="email" name="email" required>
+            <div class="error-promote">
+                <label for="email" class="error"></label>
+            </div>
+        </div>
+        <div class="prelogin-captcha control-group">
+            <div class="default-text" data-i18n="prelogin.tips.loading-captcha"></div>
+            <div class="captcha-warpper">
+                <input id="captcha" autocapitalize="off" autocomplete="off"
+                   class="form-control" data-i18n="[placeholder]prelogin.common.captcha" type="text" name="captcha" required maxlength="6" minlength="6">
+                <img id="captcha_img" class="captcha_img"  alt="">
+            </div>
+            <div class="error-promote">
+                <label for="captcha" class="error"></label>
+            </div>
+        </div>
+        <div class="control-group">
+            <button id="resend" class="prelogin-submit-btn" type="submit">
+                <span class="text" data-i18n="prelogin.sendemail.resend"></span>
+                <div class="circle"></div>
+            </button>
+        </div>
+    </form>
+
+    
+    
+</div>
+<!-- END CONTAINER -->
+<% include ../public/footer.html %>

@@ -1,0 +1,37 @@
+<% include public/header.html %>
+<link rel="stylesheet" href="/stylesheets/clouddata.css?version=<%= version %>"/>
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/clouddataMain.js?version=<%= version %>"></script>
+</head>
+<body>
+<!-- BEGIN NAVBAR -->
+<% include public/headerNav.html %>
+<!-- END NAVBAR -->
+
+<div id="main-sidebar">
+    <div class="header">
+        <i class="icomoon icomoon-devcenter"></i>
+    </div>
+    <div class="list">
+        <a href="javascript:void(0);" class="active" data-value="0">
+            <i class="icomoon icomoon-data"></i>
+            <div class="tip" data-i18n="common.module.clouddata"></div>
+        </a>
+    </div>
+</div>
+
+
+<div id="main-container">
+    <div id="main-toolbar">
+        <div class="module-name"></div>
+        <div class="toolbar-content">
+            <div id="app-selector"></div>
+        </div>
+    </div>
+    <div class="main-content white no-padding">
+        <div id="clouddata-main"></div>
+    </div>
+</div>
+
+<% include public/footer.html %>

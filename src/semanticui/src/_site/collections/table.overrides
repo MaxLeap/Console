@@ -1,0 +1,12 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.table {
+    table-layout: fixed;
+}
+
+.ui.table{
+    td{
+        text-overflow:ellipsis;
+    }
+}

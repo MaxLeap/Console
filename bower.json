@@ -1,0 +1,50 @@
+{
+  "name": "LeapCloud",
+  "version": "1.0.0",
+  "homepage": "",
+  "authors": [
+    "AppCube"
+  ],
+  "description": "LeapCloud",
+  "main": "app.js",
+  "moduleType": [
+    "amd"
+  ],
+  "keywords": [
+    "AppCube"
+  ],
+  "license": "MIT",
+  "dependencies": {
+    "backbone.marionette": "2.0.2",
+    "backbone": "1.0.0",
+    "jquery": "1.10.2",
+    "q": "~1.0.1",
+    "underscore": "~1.8.3",
+    "requirejs": "~2.1.14",
+    "requirejs-text": "~2.0.12",
+    "requirejs-tpl": "",
+    "moment": "2.10.6",
+    "slickgrid": "2.1.0",
+    "zeroclipboard": "2.1.5",
+    "jquery.scrollTo": "~1.4.14",
+    "i18next": "~1.7.7",
+    "pace": "~1.0.2",
+    "jquery-easing": "",
+    "jquery-sortable": "0.9.12",
+    "spinjs": "~2.0.1",
+    "fancybox": "~2.1.5",
+    "jquery.validation": "~1.13.0",
+    "store": "~2.1.6",
+    "moment-timezone": "~0.3.1",
+    "jquery-jsonview": "~1.2.2"
+  },
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "src/lib",
+    "test",
+    "tests"
+  ]
+}

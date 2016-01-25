@@ -1,0 +1,76 @@
+<!-- BEGIN FOOTER -->
+<div id="app-dialog-wrapper" class="ui dimmer modals page">
+    <!--<div class="ui loader"></div>-->
+    <div  id="app-dialog" class="ui modal">
+        <i class="close icon"></i>
+        <div class="header"></div>
+        <div class="actions">
+            <div class="ui button negative">Cancel</div>
+            <div class="ui primary button positive">Apply</div>
+        </div>
+    </div>
+</div>
+<div class="side-contact-article-en">
+    <div id="side-contact-article">
+        <h3>Send us a message</h3><a class="close icomoon-cancel" href="javascript:void(0);"></a>
+        <form class="contact-form">
+            <div class="field email">
+                <input type="text" name="from" autocapitalize="off" placeholder="Your Email Address" />
+            </div>
+            <div class="field message">
+                <textarea name="text" cols="30" rows="10" placeholder="Message (Required)"></textarea>
+            </div>
+        </form>
+        <a href="javascript:void(0);" class="action_button send-msg-btn">Send</a>
+        <i class="icomoon-down-dir side-contact-tail"></i>
+    </div>
+    <a href="javascript:void(0)" id="side-contact-btn" class="icomoon-message">
+    </a>
+</div>
+<div class="side-contact-article-zh">
+    <div id="side-contact-article">
+        <h3>信息反馈</h3><a class="close icomoon-cancel" href="javascript:void(0);"></a>
+        <form class="contact-form">
+            <div class="field email">
+                <input type="text" name="from" autocapitalize="off" placeholder="您的邮件地址" />
+            </div>
+            <div class="field message">
+                <textarea name="text" cols="30" rows="10" placeholder="反馈信息（必填）"></textarea>
+            </div>
+        </form>
+        <a href="javascript:void(0);" class="action_button send-msg-btn">发送</a>
+        <i class="icomoon-down-dir side-contact-tail"></i>
+    </div>
+    <a href="javascript:void(0)" id="side-contact-btn" class="icomoon-message">
+    </a>
+</div>
+
+<div id="app-dimmer"></div>
+<!-- END FOOTER -->
+<% include ../components/page-loader.html %>
+<script src="/ga/ga.js?_v=<%- timeNow %>" type="text/javascript" async defer="defer"></script>
+<% if(locale==='zh') {%>
+<script type="javascript" async defer="defer" src="https://raw.githubusercontent.com/MaxLeap/Docs/master/zh/_Scripts/ActionTail.js"></script>
+<script type="text/javascript">
+    var _hmt = _hmt || [];
+    (function() {
+        var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?acf7d3a4600388c65740f09407485d22";
+        var s = document.getElementsByTagName("script")[0];
+        s.parentNode.insertBefore(hm, s);
+    })();
+</script>
+<%}%>
+<!-- Google Tag Manager -->
+<!--<noscript><iframe src="//www.googletagmanager.com/ns.html?id=GTM-KNS38Z" height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+        new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+        j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+        '//www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+})(window,document,'script','dataLayer','GTM-KNS38Z');
+</script>
+-->
+<!-- End Google Tag Manager -->
+<%- livereload %>
+</body>
+</html>

@@ -1,0 +1,58 @@
+<% include public/header.html %>
+<link rel="stylesheet" href="/stylesheets/settings.css?version=<%= version %>"/>
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/settingsMain.js?version=<%= version %>"></script>
+</head>
+<body>
+<!-- BEGIN NAVBAR -->
+<% include public/headerNav.html %>
+<!-- END NAVBAR -->
+<div id="main-sidebar">
+    <div class="header">
+        <i class="icomoon icomoon-setting"></i>
+    </div>
+    <div class="list">
+        <a href="#general">
+            <i class="icomoon icomoon-general"></i>
+            <div class="tip" data-i18n="settings.menu.general"></div>
+        </a>
+        <a href="#application">
+            <i class="icomoon icomoon-apiusage"></i>
+            <div class="tip" data-i18n="settings.menu.application"></div>
+        </a>
+        <a href="#notification">
+            <i class="icomoon icomoon-notification"></i>
+            <div class="tip" data-i18n="settings.menu.notification"></div>
+        </a>
+        <a href="#authentication">
+            <i class="icomoon icomoon-authentication"></i>
+            <div class="tip" data-i18n="settings.menu.authentication"></div>
+        </a>
+        <a href="#email">
+            <i class="icomoon icomoon-email"></i>
+            <div class="tip" data-i18n="settings.menu.email"></div>
+        </a>
+        <a href="#iap">
+            <i class="icomoon icomoon-iap"></i>
+            <div class="tip" data-i18n="settings.menu.iap"></div>
+        </a>
+    </div>
+</div>
+<div id="main-container">
+    <div id="main-toolbar">
+        <div class="module-name white"></div>
+        <div class="toolbar-content">
+            <div id="app-selector"></div>
+        </div>
+    </div>
+    <div class="main-content white">
+        <div id="settings-general"></div>
+        <div id="settings-application"></div>
+        <div id="settings-notification"></div>
+        <div id="settings-authentication"></div>
+        <div id="settings-email"></div>
+        <div id="settings-iap"></div>
+    </div>
+</div>
+<% include public/footer.html %>

@@ -1,0 +1,151 @@
+<% include public/header.html %>
+<link rel="stylesheet" href="/stylesheets/createapp.css?version=<%= version %>"/>
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/createappMain.js?version=<%= version %>"></script>
+</head>
+<body>
+    <div id="sidebar-background"></div>
+    <div id="android-sdk-page" style="display:none"></div>
+
+    <div id="ios-sdk-page" style="display:none"></div>
+
+    <div class="ui active loader"></div>
+
+    <div id="app-dialog-create-app" class="ui modal">
+        <div class="header">
+            <i class="icon plus"></i>
+            <span data-i18n="common.tag.create-app"></span>
+        </div>
+        <div class="content" style="padding:0 40px;">
+            <div class="ui form">
+                <div class="field required" style="padding:40px 0 0 0">
+                    <label data-i18n="settings.title.app-name"></label>
+                    <input class="validate validate-required" type="text" data-i18n="[placeholder]common.placeholder.create-app" name="name">
+                </div>
+
+                <!--<div class="field required">-->
+                    <!--<label data-i18n="settings.title.platform"></label>-->
+                    <!--<div class="ui fluid search selection dropdown platform validate validate-required">-->
+                        <!--<input type="hidden" name="os" value="ios">-->
+                        <!--<i class="dropdown icon"></i>-->
+                        <!--<div class="default text"></div>-->
+                        <!--<div class="menu">-->
+                            <!--<div class="item" data-value="ios">iOS</div>-->
+                            <!--<div class="item" data-value="android">Android</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <!--<div class="field required">-->
+                    <!--<label data-i18n="settings.title.app-type"></label>-->
+                    <!--<div class="ui fluid search selection dropdown apptype validate validate-required">-->
+                        <!--<input type="hidden" name="appType" value="App">-->
+                        <!--<i class="dropdown icon"></i>-->
+                        <!--<div class="default text"></div>-->
+                        <!--<div class="menu">-->
+                            <!--<div class="item" data-value="App">App</div>-->
+                            <!--<div class="item" data-value="Game">Game</div>-->
+                        <!--</div>-->
+                    <!--</div>-->
+                <!--</div>-->
+
+                <div class="field" style="padding:0 0 25px 0">
+                    <label data-i18n="settings.title.default-lang"></label>
+                    <div class="ui fluid search selection dropdown lang">
+                        <input type="hidden" name="defaultLang" value="en">
+                        <i class="dropdown icon"></i>
+                        <div class="default text"></div>
+                        <div class="menu"></div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="actions" style="padding-bottom: 50px;">
+            <div class="ui primary button positive" data-i18n="common.tag.create-app"></div>
+        </div>
+    </div>
+
+    <div id="app-dialog-detail" class="ui modal">
+        <div class="header" data-i18n="common.title.getting-started"></div>
+        <div class="content">
+            <p style="font-size:16px;" data-i18n="common.tips.integrate-sdk"></p>
+            <div class="button-group">
+                <a id="ios_sdk_link" target="_blank" href="/quickstart/ios/core/new.html" class="ui blue button" data-i18n="common.title.ios_quickstart"></a>
+                <a id="android_sdk_link" target="_blank" href="/quickstart/android/core/new.html" class="ui green button" data-i18n="common.title.android_quickstart"></a>
+            </div>
+            <div class="ui divider"></div>
+            <h2 class="ui header" data-i18n="common.tag.app-keys"></h2>
+
+            <div class="ui form">
+                <div class="field">
+                    <label data-tip="settings.tip.application-id">Application ID</label>
+                    <div class="ui small action input">
+                        <input type="text" name="appId" readonly >
+                        <div class="ui labeled icon buttons">
+                            <div class="ui button copy-btn" data-clipboard-text="">
+                                <span data-i18n="common.tag.copy"></span>
+                                <i class="copy icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label data-tip="settings.tip.client-key">Client Key</label>
+                    <div class="ui small action input">
+                        <input type="text" name="clientKey" readonly >
+                        <div class="ui labeled icon buttons">
+                            <div class="ui button copy-btn" data-clipboard-text="">
+                                <span data-i18n="common.tag.copy"></span>
+                                <i class="copy icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label data-tip="settings.tip.javascript-key">Javascript Key</label>
+                    <div class="ui small action input">
+                        <input type="text" name="javascriptKey" readonly >
+                        <div class="ui labeled icon buttons">
+                            <div class="ui button copy-btn" data-clipboard-text="">
+                                <span data-i18n="common.tag.copy"></span>
+                                <i class="copy icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label data-tip="settings.tip.rest-key">REST API Key</label>
+                    <div class="ui small action input">
+                        <input type="text" name="restAPIKey" readonly >
+                        <div class="ui labeled icon buttons">
+                            <div class="ui button copy-btn" data-clipboard-text="">
+                                <span data-i18n="common.tag.copy"></span>
+                                <i class="copy icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="field">
+                    <label data-tip="settings.tip.master-key">Master Key</label>
+                    <div class="ui small action input">
+                        <input type="text" name="masterKey" readonly >
+                        <div class="ui labeled icon buttons">
+                            <div class="ui button copy-btn" data-clipboard-text="">
+                                <span data-i18n="common.tag.copy"></span>
+                                <i class="copy icon"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="ui divider"></div>
+            <div class="footer" data-i18n="common.tips.find-keys"></div>
+            <a href="/clouddata" target="_blank" style="margin-top:10px;" class="ui primary button positive app-button" data-i18n="common.title.console"></a>
+        </div>
+    </div>
+    <% include public/headerNav.html %>
+    <% include public/footer.html %>
+</body>
+</html>

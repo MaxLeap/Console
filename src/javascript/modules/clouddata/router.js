@@ -1,0 +1,39 @@
+define([
+    'app',
+    'dispatcher',
+    'jquery',
+    'backbone',
+    'marionette'
+], function (AppCube,Dispatcher,$,Backbone,Marionette) {
+    return Backbone.Marionette.AppRouter.extend({
+        appRoutes:{
+            "":"showClass",
+            "classes(/:className)":"showClass",
+            "classes/:className/:oid":"showPointer",
+            "relation/:className/:rowid/:columnName":"showRelation"
+        },
+        controller:{
+            showClass:function(className){
+                Dispatcher.trigger('hide',{action:'main',state:'class'},'Layout');
+                Dispatcher.trigger('show',{action:'main',state:'class',options:{
+                    className:className
+                }},'Layout');
+            },
+            showPointer:function(className,oid){
+                Dispatcher.trigger('hide',{action:'main',state:'pointer'},'Layout');
+                Dispatcher.trigger('show',{action:'main',state:'pointer',options:{
+                    className:className,
+                    oid:oid
+                }},'Layout');
+            },
+            showRelation:function(className,rowid,columnName){
+                Dispatcher.trigger('hide',{action:'main',state:'relation'},'Layout');
+                Dispatcher.trigger('show',{action:'main',state:'relation',options:{
+                    className:className,
+                    oid:rowid,
+                    columnName:columnName
+                }},'Layout');
+            }
+        }
+    });
+});

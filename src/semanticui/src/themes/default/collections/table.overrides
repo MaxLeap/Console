@@ -1,0 +1,13 @@
+/*******************************
+         Site Overrides
+*******************************/
+.ui.table {
+    table-layout: fixed;
+}
+
+.ui.table{
+    td{
+        overflow:hidden;
+        text-overflow:ellipsis;
+    }
+}

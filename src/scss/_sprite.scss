@@ -1,0 +1,55 @@
+$background-image: -76px -5px 61px 47px;
+$bottom: -218px -5px 61px 47px;
+$card_ae: -5px -233px 28px 19px;
+$card_dinner: -228px -176px 28px 19px;
+$card_discover: -190px -176px 28px 19px;
+$card_jcb: -152px -176px 28px 19px;
+$card_mastercard: -114px -176px 28px 19px;
+$card_visa: -76px -176px 28px 19px;
+$center-image: -147px -119px 61px 47px;
+$center-no-image: -5px -5px 61px 47px;
+$center: -218px -62px 61px 47px;
+$full: -218px -119px 61px 47px;
+$left-image: -76px -119px 61px 47px;
+$right-image: -5px -119px 61px 47px;
+$top-background-image: -147px -62px 61px 47px;
+$top-left-image: -147px -5px 61px 47px;
+$top-no-image: -76px -62px 61px 47px;
+$top-right-image: -5px -62px 61px 47px;
+$top: -5px -176px 61px 47px;
+
+@mixin sprite-width($sprite) {
+  width: nth($sprite, 3);
+}
+
+@mixin sprite-height($sprite) {
+  height: nth($sprite, 4);
+}
+
+@function sprite-width($sprite) {
+  @return nth($sprite, 3);
+}
+
+@function sprite-height($sprite) {
+  @return nth($sprite, 4);
+}
+
+@mixin sprite-position($sprite) {
+  $sprite-offset-x: nth($sprite, 1);
+  $sprite-offset-y: nth($sprite, 2);
+  background-position: $sprite-offset-x  $sprite-offset-y;
+}
+
+@mixin sprite($sprite) {
+  @include sprite-position($sprite);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  display: block;
+  @include sprite-width($sprite);
+  @include sprite-height($sprite);
+}
+
+.sicon {
+  background-image: url('/images/sprite.png');
+}
+

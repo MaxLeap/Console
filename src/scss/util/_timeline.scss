@@ -1,0 +1,215 @@
+.timeline{
+  width:100%;
+  height:350px;
+  background:$milk;
+  position:relative;
+}
+
+$modifierWidth:20px;
+$modifierHeight:16px;
+$buttonHeight:19px;
+$modifierLevel:5;
+
+.timeline-modifier{
+  border:1px solid $borderColor;
+  width:$modifierWidth;
+  height:($modifierHeight + 1) * $modifierLevel + $buttonHeight * 2 - 1 + $modifierHeight;
+  position:absolute;
+  top:15px;
+  left:15px;
+  z-index: 10;
+  background-color: $white;
+  @include user-select(none);
+  @include box-sizing(content-box);
+  .timeline-modifier-plus,.timeline-modifier-minus{
+    cursor:pointer;
+    position:absolute;
+    color:$lightFontColor;
+    &:hover{
+      background-color: $clouds;
+      color:$normalFontColor;
+    }
+    &:active{
+      color:$lightFontColor;
+    }
+    &.disabled{
+      background-color:$borderColor!important;
+      >.icon{
+        color:$lightFontColor!important;
+      }
+    }
+  }
+  .timeline-modifier-label{
+    cursor:pointer;
+    position:absolute;
+    text-align: center;
+    left:calc(100% + 8px);
+    bottom:$buttonHeight/2;
+    background-color: $green;
+    color:$white;
+    width:44px;
+    height:20px;
+    font-size:12px;
+    &:before{
+      position:absolute;
+      top:0;
+      left:-8px;
+      @include scaleX(0.7);
+      content:'';
+      border:10px solid $green;
+      border-bottom-color:transparent;
+      border-top-color:transparent;
+      border-left:0;
+    }
+  }
+  .timeline-modifier-plus{
+    top:0;
+    @include box-sizing(border-box);
+    height:$buttonHeight;
+    width:$modifierWidth;
+    text-align: center;
+    border-bottom:1px solid $borderColor;
+  }
+  .timeline-modifier-minus{
+    bottom:0;
+    @include box-sizing(border-box);
+    height:$buttonHeight;
+    width:$modifierWidth;
+    text-align: center;
+    border-top:1px solid $borderColor;
+  }
+  .timeline-modifier-content{
+    height: ($modifierHeight + 1) * ($modifierLevel+1);
+    margin-top:$buttonHeight - 1;
+    margin-bottom:$buttonHeight - 1;
+    position: absolute;
+    top: 0;
+  }
+  .timeline-modifier-degree{
+    height:0;
+    margin-bottom:$modifierHeight;
+    width:10px;
+    margin-left:5px;
+    border-top:1px solid $borderColor;
+    &:first-child{
+      margin-top:$modifierHeight/2;
+    }
+  }
+  .timeline-modifier-bar{
+    position:absolute;
+    padding-bottom:$modifierHeight/2;
+    background-color: $green;
+    width:3px;
+    bottom:0;
+    left:8px;
+  }
+}
+
+.timeline-slider{
+  cursor: move;
+  position: relative;
+  height:350px;
+  margin-left:55px;
+  width:calc(100% - 55px);
+  overflow:hidden;
+  z-index: 1;
+  .timeline-list,.timeline-list>.page{
+    position:relative;
+  }
+}
+
+.timeline-scale{
+  position:absolute;
+  bottom:0;
+  height:100px;
+  width:100%;
+  z-index:0;
+  >canvas{
+    width:100%;
+    height:100px;
+  }
+  &:before{
+    content:'';
+    width:100%;
+    position: absolute;
+    top:50px;
+    border-top:3px solid $darkBorderColor;
+  }
+}
+
+.timeline-item{
+  cursor:pointer;
+  position:absolute;
+  top:100px;
+  display:none;
+  @include user-select(none);
+  .content{
+    word-break: break-all;
+    border:1px solid $borderColor;
+    border-left:0;
+    background-color: $white;
+    width:180px;
+    height:auto;
+    padding:15px;
+    z-index:1;
+    >.text{
+      font-size: 12px;
+      min-height: 30px;
+    }
+    >.time{
+      font-size: 12px;
+      color:$lightFontColor;
+    }
+    >.label{
+      position: absolute;
+      right: 10px;
+      &.event-0{
+        background:$red;
+      }
+      &.event-1{
+        background:$yellow;
+      }
+      &.event-2{
+        background:$green;
+      }
+      &.event-3{
+        background:$blue;
+      }
+      &.event-4{
+        background:$grey;
+      }
+    }
+    &:before{
+      position: absolute;
+      left:0;
+      top:0;
+      content:'';
+      height:200px;
+      border-left:1px solid $borderColor;
+    }
+  }
+  .link{
+    cursor: pointer;
+    font-size: 10px;
+    color:$blue;
+  }
+  &.multi{
+    &:before,&:after{
+      content:'';
+      position:absolute;
+      z-index: -1;
+      height:100%;
+      left:0;
+      border:1px solid $borderColor;
+      background-color: $white;
+    }
+    &:after{
+      width:102%;
+      top:4px;
+    }
+    &:before{
+      width:104%;
+      top:8px;
+    }
+  }
+}

@@ -1,0 +1,79 @@
+@charset "UTF-8";
+
+//Colors
+
+$red            : #FC6154;
+$dark-red       : #F45447;
+$darker-red     : #EA4D404;
+$dark-blue      : #3d8fe3;
+$light-blue     : #cae7ff;
+$yellow         : #FFBB51;
+$green          : #4BD083;
+$blue           : #57A3F2;
+
+$black          : #444444;
+$dark-grey      : #666666;
+$grey           : #777777;
+$light-grey     : #888888;
+$clouds         : #E8E8E8;
+$milk           : #FAFCFE;
+$white          : #FFFFFF;
+
+$borderColor:     #e5e5e5;
+$darkBorderColor: #dddddd;
+
+$darkFontColor:   #444444;
+$normalFontColor: #777777;
+$lightFontColor:  #999999;
+
+//Fonts
+$Arial:Arial,sans-serif;
+$Helvetica:'Helvetica Neue', Helvetica,'SourceSansProLight', 'SourceSansPro', Georgia,  'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑',STHeiti, 'WenQuanYi Micro Hei', Arial, sans-serif;
+$SourceSansPro:'SourceSansPro','SourceSansProLight', Georgia, 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑',STHeiti, 'WenQuanYi Micro Hei', Arial, sans-serif;
+$SourceSansProLight:'SourceSansProLight', 'SourceSansPro', Georgia, 'Helvetica Neue', Helvetica, 'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑',STHeiti, 'WenQuanYi Micro Hei', Arial, sans-serif;
+$Avenir: 'Avenir Next', Avenir,'Helvetica Neue', Helvetica,'SourceSansProLight', 'SourceSansPro', Georgia,  'Hiragino Sans GB', 'Microsoft YaHei', '微软雅黑', STHeiti, 'WenQuanYi Micro Hei', Arial, sans-serif;
+$CenturyGothic:'Century Gothic',Arial,sans-serif;
+
+//Layout
+$headerHeight:65px;
+$sidebarWidth:70px;
+$titleHeight:80px;
+$mainSidebarWidth:200px;
+$mainSidebarItemHeight:40px;
+$mainSidebarBackgroundColor:#f0f2f5;
+$mainSidebarActiveBackgroundColor:$white;
+$mainSidebarPaddingLeft:20px;
+$logoWidth:$sidebarWidth;
+
+$headerMenuIndex:9999;
+
+
+$tableHeaderBackgroundColor:$milk;
+$tableHeaderHoverBackgroundColor:$borderColor;
+$logoBackgroundColor:#4391e1;
+$headerBackgroundColor:$blue;
+$headerActiveBackgroundColor:#66b1ff;
+
+$sidebarBorderColor:#3c4854;
+$sidebarBackgroundColor:#333d4a;
+$sidebarActiveBackgroundColor:#212833;
+$tooltipBackgroundColor:rgba(0,0,0,.8);
+
+$innerSidebarBackgroundColor:#f0f2f5;
+
+$buttonActiveColor:#f4f4f4;
+
+$dropdownZIndex:3000;
+$contentZIndex:99;
+$tooltipZIndex:98;
+$ButtonZIndex:10;
+
+
+$formHeaderFontSize:20px;
+$formHeaderFontColor:$darkFontColor;
+$formHeaderBottom:35px;
+
+$formSubHeaderFontSize:16px;
+$formSubHeaderFontColor:$darkFontColor;
+$formSubHeaderBottom:16px;
+$formSubHeaderTop:30px;

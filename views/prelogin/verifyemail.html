@@ -1,0 +1,85 @@
+<% include ../public/header.html %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/prelogin.css" media="screen">
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/verifyemailMain.js"></script>
+</head>
+<body>
+<!-- BEGIN CONTAINER -->
+
+<div id="verifyemail"  class="container-fluid prelogin-pannel login prelogin-content" view-root>
+
+    <form id="sendemail_success" >
+        <i class="icon-success"></i>
+        <h1 class="prelogin-title" data-i18n="common.success.default"></h1>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p data-i18n="prelogin.sendemail.success-tip"><!-- Your verity email has been sended,please check it in your email! --></p>
+        </div>
+    </form>
+    <form id="sendemail_fail" >
+        <i class="icon-fail"></i>
+        <h1 class="prelogin-title" data-i18n="common.fail.default"></h1>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p data-i18n="prelogin.sendemail.fail-tip-top"></p>
+            
+            <p data-i18n="prelogin.sendemail.fail-tip-bottom"></p>
+        </div>
+        <div class="control-group">
+            <button id="resend" class="prelogin-submit-btn"  type="button">
+                <span class="text" data-i18n="prelogin.sendemail.resend"></span>
+                <div class="circle"></div>
+            </button>
+        </div>
+    </form>
+    <form action="" id="verifyemail_success">
+      <i class="icon-success"></i>
+        <h1 class="prelogin-title" data-i18n="common.success.default"></h1>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p>
+              <span data-i18n="prelogin.verifyemail.verify-success"></span>
+              <span id="auto_jump">3</span><span data-i18n="prelogin.verifyemail.jump"></span>
+            </p>
+        </div>
+    </form>
+    <form action="" id="verifyemail_fail">
+      <i class="icon-fail"></i>
+        <h1 class="prelogin-title" data-i18n="common.fail.default"></h1>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p data-i18n="prelogin.verifyemail.verify-fail"></p>
+        </div>
+    </form>
+    <form id="sendresetpassword_success" >
+        <i class="icon-success"></i>
+        <h1 class="prelogin-title" data-i18n="common.success.default"></h1>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p data-i18n="prelogin.sendreset.success-tip"></p>
+        </div>
+    </form>
+    <form id="sendresetpassword_fail" >
+        <i class="icon-fail"></i>
+        <h1 class="prelogin-title" data-i18n="common.fail.default"></h1>
+
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p data-i18n="prelogin.sendemail.fail-tip-top"></p>
+
+            <p data-i18n="prelogin.sendreset.fail-tip-bottom"></p>
+        </div>
+        <div class="control-group">
+            <button id="resend_reset" class="prelogin-submit-btn"  type="button">
+            <!-- <a href="/forgot"> -->
+                <span class="text" data-i18n="prelogin.sendemail.resend"></span>
+                <div class="circle"></div>
+            <!-- </a> -->
+            </button>
+        </div>
+    </form>
+
+
+</div>
+<!-- END CONTAINER -->
+<% include ../public/footer.html %>

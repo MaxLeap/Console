@@ -1,0 +1,218 @@
+$chat-box-helper-panel-color:#f7f7f7;
+$chat-box-border-color:$borderColor;
+$chat-box-background-color:$white;
+
+$chat-box-dialog-color-left:$green;
+$chat-box-dialog-font-color-left:$white;
+$chat-box-dialog-border-color-left:$green;
+
+$chat-box-dialog-color-right:$mainSidebarBackgroundColor;
+$chat-box-dialog-font-color-right:$normalFontColor;
+$chat-box-dialog-border-color-right:$mainSidebarBackgroundColor;
+
+$note-border-color:#faecaf;
+$note-background-color:#fffae6;
+$chat-box-list-item-color:$white;
+$chat-box-border-color:$blue;
+
+.chat-box{
+  background-color:$chat-box-background-color;
+  height:100%;
+  position:relative;
+  .message-list{
+    padding:20px 0;
+    height:calc(100% - 250px);
+    overflow-y:scroll;
+    .message-time{
+      font-size:12px;
+      color:$lightFontColor;
+      text-align: center;
+      width:100%;
+      float:left;
+      margin-bottom:10px;
+      >.icomoon-time{
+        line-height: 19px;
+        font-size: 16px;
+        margin-right:5px;
+      }
+    }
+    .message-list-item{
+      min-width: 160px;
+      clear: both;
+      border-radius: 4px;
+      padding:15px 20px 20px 20px;
+      margin-bottom:30px;
+      position:relative;
+      .attach-content{
+        display:block;
+        @include clearfix();
+        margin-top:5px;
+        text-decoration: none!important;
+        >.icomoon-attach{
+          font-size:18px;
+          float:left;
+          margin-right:5px;
+          color:$lightFontColor;
+          &:hover{
+            color:$normalFontColor;
+          }
+        }
+        >.filename{
+          float:right;
+        }
+      }
+      >img{
+        max-height:256px;
+        max-width:100%;
+      }
+      >a{
+        color:$blue;
+        text-decoration: underline;
+      }
+      &.left,&.right,&.middle{
+        &:before,&:after{
+          content: "";
+          position: absolute;
+          border-top:8px solid transparent;
+          border-bottom:8px solid transparent;
+          top:20px;
+        }
+      }
+      &.middle{
+        float: right;
+        margin-right: 20px;
+        color: $chat-box-dialog-font-color-right;
+        border: 1px solid $note-background-color;
+        background-color: $note-background-color;
+        &:before {
+          right: -9px;
+          border-left: 8px solid $note-background-color;
+        }
+        &:after {
+          right: -8px;
+          border-left: 8px solid $note-background-color;
+        }
+        > .spinner {
+          left: -10% !important;
+          right: auto!important;
+        }
+      }
+      &.left{
+        float:left;
+        margin-left: 20px;
+        color: $chat-box-dialog-font-color-left;
+        border:1px solid $chat-box-dialog-border-color-left;
+        background-color: $chat-box-dialog-color-left;
+        &:before{
+          left: -9px;
+          border-right:8px solid $chat-box-dialog-border-color-left;
+        }
+        &:after{
+          left: -8px;
+          border-right:8px solid $chat-box-dialog-color-left;
+        }
+        >.spinner{
+          right: -10%!important;
+          left: auto!important;
+        }
+      }
+      &.right{
+        float:right;
+        margin-right: 20px;
+        color: $chat-box-dialog-font-color-right;
+        border:1px solid $chat-box-dialog-border-color-right;
+        background-color: $chat-box-dialog-color-right;
+        &:before{
+          right: -9px;
+          border-left:8px solid $chat-box-dialog-border-color-right;
+        }
+        &:after{
+          right: -8px;
+          border-left:8px solid $chat-box-dialog-color-right;
+        }
+        >.spinner{
+          left: -10%!important;
+          right: auto!important;
+        }
+      }
+    }
+  }
+  .message-input{
+    border-top:1px solid $borderColor;
+    background-color: $white;
+    position:absolute;
+    width:100%;
+    bottom:0;
+    padding:10px;
+    padding-top:0;
+    >.ui.menu{
+      margin-bottom:5px;
+      border-color: $borderColor;
+      border-width:1px;
+      .item{
+        border-width:1px;
+        margin-bottom:-1px;
+      }
+    }
+    >.ui.form{
+      textarea{
+        resize: none;
+        border:0;
+      }
+      .toolbar{
+        float:left;
+        margin-top:7px;
+        .icon,.icomoon{
+          display: inline-block;
+          text-align: center;
+          width:25px;
+          height:21px;
+          margin:0;
+          cursor: pointer;
+          color:$lightFontColor;
+          &:hover{
+            color:$normalFontColor
+          }
+        }
+      }
+      .button.reply{
+        margin:0;
+      }
+      .button.reply-close{
+        margin-right:10px;
+      }
+    }
+
+    &.private{
+      .reply-content>textarea{
+        background-color:$note-background-color;
+        @include placeholder($lightFontColor);
+      }
+    }
+  }
+  .message-closed,.message-resolved,.message-rejected{
+    position:absolute;
+    width:100%;
+    height:230px;
+    bottom:0;
+    background-color: rgba(255,255,255,.7);
+    text-align:center;
+    >div{
+      margin:0 50px;
+      margin-top:75px;
+      padding:25px 0;
+      color:$red;
+      font-size:18px;
+    }
+  }
+
+  .btn-insert-faq{
+    position:relative;
+    width:150px;
+    color: $normalFontColor;
+  }
+  .btn-reply{
+    position:relative;
+    width:100px;
+  }
+}

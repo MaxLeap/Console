@@ -1,0 +1,180 @@
+#notification-label{
+  display:inline-block;
+  perspective:800px;
+  position:relative;
+  margin-right:20px;
+  padding-top:15px;
+  .toggle-notification{
+    position:relative;
+    padding:5px 40px;
+    border-right:1px solid $dark-grey;
+    span.badge{
+      padding: 0 0.4em;
+      font-size:12px;
+      position:absolute;
+      background:$red;
+      color:$white;
+      top:-5px;
+      right:26px;
+      text-align: center;
+      border-radius: .5em;
+      white-space: nowrap;
+      vertical-align: baseline;
+      font-weight:normal;
+    }
+  }
+  .ui.breadcrumb{
+    display: none;
+    margin-bottom: 0;
+    padding: 7px 0;
+    border-bottom: 1px solid #ccc;
+    border-radius: 0;
+    width:100%;
+    text-align:center;
+    overflow-x:hidden;
+    >.section{
+      @include user-select(none);
+      cursor:pointer;
+      &.active{
+        font-weight: normal;
+        color:$blue;
+      }
+    }
+  }
+}
+.notification-dropdown{
+  position:absolute;
+  top:60px;
+  left:-101px;
+  width:297px;
+  height:300px;
+  background-color: $white;
+  transform-style: preserve-3d;
+  backface-visibility:hidden;
+  opacity:0;
+  box-shadow: 0px 2px 10px #C7C7C7;
+  $borderWidth: 12px;
+  font-family: Verdana;
+  border-radius: 5px;
+  label, input,div, span{
+    font-family: inherit;
+  }
+  &:before,&:after{
+    border-left: $borderWidth solid transparent;
+    border-right: $borderWidth solid transparent;
+    left: 50%;
+    margin-left:-8px;
+    content: " ";
+    position: absolute;
+    pointer-events: none;
+  }
+  &:before{
+    border-bottom: $borderWidth solid #ccc;
+    top:-$borderWidth;
+  }
+  &:after{
+    border-bottom: $borderWidth solid #fff;
+    top: -$borderWidth;
+  }
+  .notification-status{
+    width:100%;
+    background-color:$white;
+    position:absolute;
+    bottom:0;
+    padding:2px 26px;
+    border-top:1px solid #ccc;
+    color: rgb(204,204,204);
+    font-size: 12px;
+    font-weight: normal;
+    line-height: 21px;
+    .btn-refresh{
+      min-width: 0;
+      border: none;
+      box-shadow: none;
+      margin-left: -4px;
+      margin-right: 7px;
+      margin-top: 3px;
+      padding: 0;
+      transition-duration: 0;
+      @include sprite($icon_update);
+      &:hover{
+        @include sprite($icon_pause);
+      }
+      &.loading{
+        pointer-events: none;
+        background: none;
+      }
+      width: 17px;
+    }
+  }
+  .notification-dropdown-content{
+    overflow-y:scroll;
+    height:274px;
+  }
+  .notification-body{
+    padding:0;
+    list-style: none;
+    .message{
+      margin: 0 26px;
+      border-bottom:1px solid #ccc;
+      >a{
+        margin:13px 0 !important;
+        text-decoration: none;
+        display:block;
+        border-right: none !important;
+        padding: 0 !important;
+        @include clearfix();
+        .app-icon-head{
+          @include size(36px,36px);
+          transform: scale(.5);
+          transform-origin: right;
+          margin-left: -20px;
+          margin-top: -7px;
+        }
+        >.right{
+          width:220px;
+          margin-left: 9px;
+          overflow:hidden;
+          text-overflow: ellipsis;
+        }
+        .from{
+          width:140px;
+          font-size: 14px;
+          color: rgb(77,77,77);
+          @include ellipsis();
+        }
+        time{
+          font-size:12px;
+          color:rgb(204,204,204);
+        }
+        .title{
+          margin-top:5px;
+          font-size: 12px;
+          color: rgb(153,153,153);
+          @include ellipsis();
+        }
+        .content{
+          height:20px;
+          color:#ccc;
+        }
+      }
+      &:last-child{
+        border-bottom:0;
+      }
+    }
+  }
+  .notification-empty-view{
+    display: none;
+    .notification-empty-view-icon{
+      margin-top: 80px;
+      height: 76px;
+      background-repeat: no-repeat;
+      background-position: center;
+      background-image: url(/images/icon_emptyview_small.png);
+    }
+    .notification-empty-view-text{
+      margin-top: 20px;
+      text-align: center;
+    }
+  }
+}

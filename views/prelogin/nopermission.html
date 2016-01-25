@@ -1,0 +1,27 @@
+<% include ../public/header.html %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/prelogin.css" media="screen">
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/nopermissionMain.js"></script>
+</head>
+<body>
+<!-- BEGIN CONTAINER -->
+
+<div id="verifyemail"  class="container-fluid prelogin-pannel login prelogin-content" view-root>
+
+    <form id="sendemail_fail" style="display:block!important;">
+        <i class="icon-fail"></i>
+        <div class="control-group prelogin-tip prelogin-tip-login">
+            <p data-i18n="prelogin.tip.no-permission"></p>
+
+            <p data-i18n="prelogin.tip.contact-admin"></p>
+        </div>
+        <div class="control-group">
+            <button id="resend" class="prelogin-submit-btn" type="button" onclick="location.href='/dashboard'">
+                <span class="text" data-i18n="prelogin.tag.go-dashboard"></span>
+            </button>
+        </div>
+    </form>
+</div>
+<!-- END CONTAINER -->
+<% include ../public/footer.html %>

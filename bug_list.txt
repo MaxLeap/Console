@@ -1,0 +1,1 @@
+1. remove direct attr like [] from view and create it in the initialize

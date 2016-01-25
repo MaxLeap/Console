@@ -1,0 +1,6 @@
+[submodule "src/javascript/core"]
+	path = src/javascript/core
+url=https://gitlab.maxleap.com/web/core.git
+[submodule "src/semanticui"]
+	path = src/semanticui
+url=https://gitlab.maxleap.com/web/semantic2-0.git

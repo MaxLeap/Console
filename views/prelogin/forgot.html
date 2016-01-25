@@ -1,0 +1,50 @@
+<% include ../public/header.html %>
+<link rel="stylesheet" type="text/css" href="/stylesheets/prelogin.css" media="screen">
+<!-- Page Level Script -->
+<script type="text/javascript" src="/javascript/vendor/requirejs/require.js"
+        data-main="/javascript/forgotMain.js"></script>
+</head>
+<body>
+<!-- BEGIN CONTAINER -->
+
+<div class="container-fluid prelogin-pannel forgot prelogin-content" view-root>
+    <form id="form-forgot" class="form-forgot" role="form" novalidate>
+
+        <div class="prelogin-logo" data-i18n="prelogin.tag.forgot-password"></div>
+
+        <div class="control-group">
+            <input id="email" autocapitalize="off" autocomplete="off"
+                   class="form-control accountInput" data-i18n="[placeholder]prelogin.common.email" type="email" name="email" required autofocus >
+            <div class="error-promote">
+                <label for="email" class="error"></label>
+            </div>
+        </div>
+
+        <div class="prelogin-captcha control-group">
+            <div class="default-text" data-i18n="prelogin.tips.loading-captcha"></div>
+            <div class="captcha-warpper">
+                <input id="captcha" autocapitalize="off" autocomplete="off"
+                   class="form-control" data-i18n="[placeholder]prelogin.common.captcha" type="text" name="captcha" required maxlength="6" minlength="6">
+                <img id="captcha_img" class="captcha_img" alt="">
+            </div>
+            <div class="error-promote">
+                <label for="captcha" class="error"></label>
+            </div>
+        </div>
+
+
+        <div class="control-group prelogin-submit-btn-wrapper">
+            <button id="forgotBtn" class="prelogin-submit-btn" type="submit">
+                <span class="text" data-i18n="prelogin.tag.send-email"></span>
+                <div class="circle"></div>
+            </button>
+        </div>
+
+        <div class="control-group prelogin-tip prelogin-tip-forgot">
+            <span data-i18n="prelogin.tips.need-account"></span>
+            <a class="link" href="/" data-i18n="prelogin.tag.register"></a>
+        </div>
+    </form>
+</div>
+<!-- END CONTAINER -->
+<% include ../public/footer.html %>

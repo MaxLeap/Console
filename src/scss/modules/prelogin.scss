@@ -1,0 +1,261 @@
+
+@charset "UTF-8";
+@import "custom_import";
+
+$btn-background: #0E78FF;
+$pannel-width:345px;
+$input-font-size:18px;
+$input-font-color:#007eff;
+
+
+html,body {
+  background-color: #FFFFFF;
+}
+.left{
+  float: left;
+}
+.right{
+  float: right;
+}
+.prelogin-pannel {
+  font-weight: 200;
+  font-family: $SourceSansProLight;
+  width: $pannel-width;
+  margin: auto;
+  margin-top: 10vh;
+  .link{
+    color: #0E78FF;
+    cursor: pointer;
+  }
+  form {
+    margin: 0 auto;
+    .prelogin-logo {
+      display: block;
+      font-size: 24px;
+      font-weight: bold;
+      color: #404040;
+      margin: 20px 0;
+      text-align: center;
+    }
+    .circle {
+      display: block;
+      margin: 0 auto;
+      background: url('/images/prelogin/loading_icon_small@2x.png') no-repeat;
+      background-size: 20px;
+      width: 20px;
+      height: 20px;
+      position: relative;
+      -webkit-animation: spin 1s infinite linear;
+      .inner {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100;
+        height: 100;
+      }
+    }
+
+    .circle.spin {
+      -webkit-animation: spin 2s infinite;
+    }
+
+    .control-group {
+      margin-bottom: 5px;
+      input[type="email"], input[type="password"], input[type="text"] ,input[name="captcha"]{
+        height: 60px;
+        width: $pannel-width;
+        font-size: $input-font-size;
+        font-weight: 200;
+        text-indent: 20px;
+        // padding-left: 20px; 
+        font-weight: normal;
+        border: 1px solid #eeeeee;
+        -moz-border-radius: 5px;
+        -webkit-border-radius: 5px;
+        border-radius: 5px;
+        color:$input-font-color;
+      }
+      input#captcha{
+        width: 180px;
+      }
+      #captcha_img{
+        float: right;
+        width: 135px;
+        height: 60px;
+        border: 1px solid #eeeeee;
+        border-radius: 5px;
+        cursor: pointer;
+
+      }
+      input[type="email"]:hover, input[type="password"]:hover, input[type="text"]:hover,
+      input[type="email"]:focus, input[type="password"]:focus, input[type="text"]:focus {
+        box-shadow: none;
+        color: $input-font-color;
+      }
+      input::-webkit-input-placeholder,input:-moz-placeholder ,input::-moz-placeholder ,input:-ms-input-placeholder {
+        color: #D8D8D8;
+        font-size: $input-font-size;
+        font-weight: 200;
+      }
+      .error-promote {
+        color: #ff6552;
+        height: 20px;
+        padding-left: 15px;
+      }
+    }
+    .captcha-warpper{
+      display: none;
+    }
+    .control-group.error {
+      input, input:hover {
+        border: 1px solid #ff6552;
+      }
+    }
+    .options {
+      color:$black;
+      height: 30px;
+      font-family: SourceSansProLight;
+      font-size: 14px;
+
+      .checkbox-inline {
+        width: 130px;
+      }
+
+      .checkbox {
+        width: 20px;
+        height: 20px;
+        float: left;
+        margin: 0 10px 0 0px;
+        background-size: 20px 20px;
+        background-image: url('/images/prelogin/btn_check@2x.png');
+      }
+
+      .checkbox.checked {
+        background-image: url('/images/prelogin/btn_check_selected@2x.png');
+      }
+
+    }
+
+    .prelogin-captcha{
+      .default-text{
+        text-align: center;
+      }
+    }
+
+    .prelogin-submit-btn {
+      // display: block;
+      height: 55px;
+      background-color: $input-font-color;
+      width:$pannel-width;
+      border: 1px solid $input-font-color;
+      border-radius: 2px;
+      cursor: pointer;
+      .text{
+        display: block;
+        color: #ffffff;
+        font-size: $input-font-size;
+        text-transform: uppercase;
+      }
+      .circle{
+        display: none;
+      }
+    }
+
+    .prelogin-submit-btn:hover {
+      color: #ffffff;
+      background-color: $input-font-color;
+      border-color: $input-font-color;
+    }
+    .prelogin-submit-btn[disabled] {
+      background-color: #86BBFF;
+      border-color: #86BBFF;
+      color: #86BBFF;
+    }
+    .prelogin-submit-btn.loading{
+      background-color: #86BBFF;
+      border-color: #86BBFF;
+      color: #86BBFF;
+      .text{
+        display: none;
+      }
+      .circle{
+        display: block;
+      }
+    }
+
+    .agree {
+      width: $pannel-width - 45;
+      margin: 30px auto;
+      text-align: center;
+      font-size: 14px;
+      line-height: 16px;
+      // text-transform: capitalize;
+      a {
+        margin: 0 5px;
+      }
+    }
+    .or-line {
+      width: $pannel-width - 45;
+      border-bottom: 1px solid #E7E9EC;
+      margin: 0 auto;
+    }
+
+    .prelogin-tip{
+      width: $pannel-width - 45;
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    #facebookLogin {
+      background: #247CD6;
+    }
+    #googleLogin {
+      background: #E04B4B;
+    }
+  }
+
+}
+
+@-webkit-keyframes spin {
+  0% { -webkit-transform: rotate(0)}
+  100% { -webkit-transform: rotate(-360deg)}
+}
+#verifyemail,#verify,#regnotify,#resetnotify{
+  // min-width: 450px;
+  text-align:center;
+  form{
+    .prelogin-tip{
+      width: auto;
+      font-size: 18px;
+    }
+  }
+  .hide{
+    display: none;
+  }
+  .error-promote{
+      text-align:left;
+  }
+}
+
+//verify email ,add by wye
+.icon-success,.icon-fail{
+  margin: 0 auto;
+  display: inline-block;
+  width: 151px;
+  height: 152px;
+  background:url(/images/prelogin/icon_success.png) no-repeat center center;
+  background-size:100%;
+}
+.icon-fail{
+  background-image:url(/images/prelogin/icon_fail.png);
+}
+.prelogin-captcha{
+  text-align: left;
+}
+.captcha_img{
+  background: url(/images/ajax_loader_mini.gif) no-repeat center center;
+}
+
+
+
+

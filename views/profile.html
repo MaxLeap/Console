@@ -1,0 +1,66 @@
+<% include public/header.html %>
+    <link rel="stylesheet" href="/stylesheets/profile.css?version=<%= version %>" />
+    <!-- Page Level Script -->
+    <script type="text/javascript" src="/javascript/vendor/requirejs/require.js" data-main="/javascript/profileMain.js"></script>
+    </head>
+    <!--edit userinfo-->
+
+    <body>
+        <div id="sidebar-background"></div>
+        <!-- BEGIN NAVBAR -->
+        <% include public/headerNav.html %>
+            <!-- END NAVBAR -->
+            <div id="main-sidebar">
+                <div class="header">
+                    <i class="icomoon icomoon-useri"></i>
+                </div>
+                <div class="list">
+                </div>
+            </div>
+            <div id="main-container">
+                <div id="main-toolbar">
+                    <div class="module-name"></div>
+                    <div class="toolbar-content">
+                        <div id="app-selector"></div>
+                    </div>
+                </div>
+                <div class="main-content white">
+                    <!-- BEGIN CONTAINER -->
+                    <div id="profile-main" class="main-content">
+                        <form id="profile" class="ui form  loading">
+                            <!-- <h3 class="ui  header" data-i18n="profile.form.userinfo-title"></h3> -->
+                            <div class="field">
+                                <label data-i18n="profile.label.email"></label>
+                                <input type="email" name="email" data-i18n="[placeholder]profile.placeholder.email" id="email" disabled="true" class="validate validate-required" />
+                            </div>
+                            <div class="field">
+                                <label data-i18n="profile.label.timezone"></label>
+                                <div class="ui selection dropdown dropdown-timezone search  validate validate-required" >
+                                    <input name="timezone" type="hidden">
+                                    <div class="default text" data-i18n="common.dropdown.placeholder"></div>
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu" tabindex="-1">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="field" style="display:none;">
+                                <label data-i18n="profile.label.language"></label>
+                                <div class="ui selection dropdown dropdown-language dropdown2-parts">
+                                    <input name="language" class="validate validate-arrayrequired js-value-input" type="hidden" value="en">
+                                    <div class="default text"></div>
+                                    <i class="dropdown icon"></i>
+                                    <div class="menu">
+                                        <div class="item" data-value="en"><i class="us flag"></i>English</div>
+                                        <div class="item" data-value="zh"><i class="cn flag"></i>Chinese</div>
+                                        <!--<div class="item" data-value="ja"><i class="jp flag"></i>Japanese</div>-->
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="ui primary button btn-save pull-right" data-i18n="common.form.save"></div>
+                        </form>
+                    </div>
+                    <!-- END CONTAINER -->
+                </div>
+            </div>
+            <% include public/footer.html %>

@@ -1,0 +1,744 @@
+@import "custom_import";
+@import "util/slickgrid";
+@import "util/advancedtable";
+@import "util/daterangepicker";
+
+#clouddata-main{
+  height:100%;
+  >.sidebar{
+    width:$mainSidebarWidth;
+    background-color: $mainSidebarBackgroundColor;
+    height:100%;
+    float:left;
+  }
+  >.main-content{
+    width: calc(100% - 200px);
+    height:100%;
+    overflow:hidden;
+    float:right;
+  }
+  &.full{
+    >.sidebar{
+      width:0;
+      display:none;
+    }
+    >.main-content{
+      width: 100%;
+    }
+  }
+}
+
+#data-sidebar{
+  position:relative;
+  height:100%;
+  .container{
+    width:100%;
+    height: calc(100% - 230px);
+    overflow-y: hidden;
+    padding:0;
+    >ul{
+      @include list();
+      li{
+        a{
+          color:$normalFontColor;
+          border-left:4px solid $mainSidebarBackgroundColor;
+          border-right:1px solid $mainSidebarActiveBackgroundColor;
+          display:block;
+          text-decoration: none;
+          padding: 10px 10px 10px 15px;
+          @include clearfix();
+          @include box-sizing(border-box);
+          >.badge{
+            text-align: right;
+            line-height:19px;
+            height:19px;
+            padding: 0 5.6px;
+            color:$normalFontColor;
+            float:right;
+          }
+        }
+        &.list-msg{
+          margin-left: -20px;
+          text-align: center;
+          padding: 5px 10px 5px 15px;
+        }
+        &.active,&:hover{
+          a{
+            border-left:4px solid $green;
+            border-right:1px solid $mainSidebarBackgroundColor;
+            background-color: $mainSidebarActiveBackgroundColor;
+            font-weight: bold;
+            >.badge{
+              font-weight: normal;
+              color:$white;
+              background-color: $yellow;
+              border-radius:10px;
+            }
+          }
+        }
+        &.sub{
+          a{
+            border-left:4px solid $white;
+            padding-left:20px;
+          }
+          .icomoon-arrow{
+            position:relative;
+            top:-2px;
+            font-size: 14px;
+            margin-right: 10px;
+          }
+        }
+      }
+    }
+  }
+  .toolbar{
+    padding:20px 10px;
+    >.ui.input{
+      min-width:100%;
+      width:100%;
+    }
+  }
+  .footer{
+    margin-top:25px;
+    border-top:1px solid $borderColor;
+    padding:20px 20px 0 20px;
+    text-align: center;
+    >.ui.button{
+      width: 100%;
+    }
+  }
+  .icomoon-attention-circled{
+    font-size: 16px;
+  }
+}
+
+#data-toolbar{
+  padding:25px 25px 10px 25px;
+  @include clearfix();
+  .ui.breadcrumb{
+    margin:0;
+    @include font-smoothing();
+    padding-top: 10px;
+    font-size:20px;
+    .active.section{
+      font-weight: normal;
+      color:$formHeaderFontColor;
+    }
+  }
+  .toolbar{
+    >.pull-right{
+      position:relative;
+    }
+  }
+}
+
+.nano.ui.button{
+  padding:.3rem 0;
+  min-width:50px;
+}
+
+.slick-cell{
+  .nano.ui.button.edit-acl,.nano.ui.button.btn-upload,.nano.ui.button.btn-remove{
+    position:absolute;
+    right:2px;
+    top:4px;
+    z-index:1;
+  }
+  .ui.progress{
+    width:auto!important;
+    margin:0;
+    z-index:0;
+    >.bar{
+      height:1.6em;
+    }
+  }
+}
+
+.ui.dropdown.show-column>.menu>.item{
+  padding-left:0.6rem !important;
+  min-width:150px;
+}
+
+#data-page-grid>.portlet{
+  padding:0 25px;
+}
+
+.condition-editor>.condition-list{
+  .ui.dropdown{
+    width:130px;
+    >.icon{
+      float:right;
+    }
+    >.text{
+      max-width: 75px;
+      @include ellipsis();
+    }
+  }
+  .icon.remove{
+    @include IconRemove();
+  }
+  input[type=text]{
+    width: 220px;
+  }
+}
+
+.view-placeholder>.loading-view>.ui.dimmer{
+  z-index:2!important;
+}
+
+.scale.transition.in {
+  -webkit-animation-name: scaleIn;
+  animation-name: scaleIn;
+}
+.scale.transition.out {
+  -webkit-animation-name: scaleOut;
+  animation-name: scaleOut;
+}
+
+.ui.modal[special-dialog-ui=set-filter]{
+  width:600px;
+  margin: 0 0 0 -300px;
+  .condition-list>.fields:first-child{
+    margin-top:20px;
+  }
+  .condition-list>.fields:last-child{
+    margin-bottom:10px;
+  }
+  .content{
+    padding: 0 25px;
+  }
+  .button.add-condition{
+    float:left;
+  }
+}
+
+.ui.modal[special-dialog-ui=task-list]{
+  .btn-back{
+    display:none;
+    &.visible{
+      display:inline-block;
+    }
+  }
+  .actions{
+    text-align:center;
+  }
+  .content{
+    padding-bottom:0;
+  }
+  .toolbar{
+    @include clearfix();
+  }
+  .ui.form .ui.input>input{
+    width:200px!important;
+  }
+  .table-content{
+    margin-top:15px;
+  }
+  .portlet{
+    margin:0;
+    .portlet-title{
+      display:none;
+    }
+  }
+  .view-placeholder{
+    min-height:220px;
+    .loading-view{
+      margin:0;
+    }
+  }
+  .sub-table{
+    tr>td:first-child{
+      width:100px;
+    }
+    tr>td{
+      padding:20px!important;
+    }
+  }
+  .log-content{
+    padding:10px;
+    height:300px;
+    width:700px;
+    overflow: scroll;
+    >p{
+      line-height:25px;
+      white-space: pre;
+      margin-bottom:2px;
+    }
+    .error{
+      color:$red;
+    }
+    .warning{
+      color:$yellow;
+    }
+  }
+}
+
+@mixin editorModal(){
+  .header{
+    display:none;
+  }
+  .content{
+    padding-bottom:0;
+  }
+  textarea{
+    width:100%;
+    padding:10px;
+    height:300px;
+    border-color: $darkBorderColor;
+    background-color:$tableHeaderBackgroundColor;
+    resize:none;
+    outline:none!important;
+  }
+}
+.ui.modal[special-dialog-ui=editor]{
+  width:800px;
+  margin: 0 0 0 -400px;
+  @include editorModal();
+}
+
+.ui.modal[special-dialog-ui=geo-editor]{
+  width:500px;
+  margin: 0 0 0 -250px;
+  @include editorModal();
+  label{
+    min-width:70px;
+  }
+  input[type=text]{
+    width:300px;
+  }
+}
+
+.grid-view>.h-scroll{
+  height:46px;
+  width:20px;
+  position:absolute;
+  top:1px;
+  background-color: $tableHeaderBackgroundColor;
+  cursor: pointer;
+  &.disabled{
+    background-color: #f0f2f5!important;
+    color:#cbcdcf;
+    cursor: auto;
+  }
+  &.left{
+    left:0;
+    >.icon{
+      margin-left: 0;
+      margin-right: 3px;
+    }
+  }
+  &.right{
+    right:0;
+    >.icon{
+      margin-right: 0;
+      margin-left: 3px;
+    }
+  }
+  &:hover{
+    background-color: $tableHeaderHoverBackgroundColor;
+  }
+  >.icon{
+    margin-top:14px;
+  }
+}
+
+[special-dialog-ui=set-permission]>.content{
+  padding:0!important;
+}
+
+#data-toolbar >.toolbar.pull-right>.ui{
+  float:left;
+  margin-top:13px;
+  margin-right:15px;
+  margin-bottom:5px;
+  cursor: pointer;
+  color:$lightFontColor;
+  &:active{
+    color:$normalFontColor
+  }
+  .icomoon-refresh{
+    transform-origin: 11.5px 10px;
+  }
+  &.refresh.active{
+    @include rotate(-360deg);
+    @include transition(transform .3s linear);
+  }
+  &:last-child{
+    margin-right:0;
+  }
+}
+
+#data-toolbar .ui.filter.active{
+  color:$blue!important;
+  background-color: $white!important;
+}
+
+@keyframes me-loading{
+  from {
+    @include rotate(0deg);
+  }
+  to{
+    @include rotate(-360deg);
+  }
+}
+@-webkit-keyframes me-loading{
+  from {
+    @include rotate(0deg);
+  }
+  to{
+    @include rotate(-360deg);
+  }
+}
+
+#upload-icon{
+  text-align:center;
+  right:15px;
+  bottom:65px;
+  position: fixed;
+  background-color: rgba(46, 49, 51, 0.6);
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  cursor:pointer;
+  >i{
+    margin:0;
+    line-height:38px;
+    font-size:16px;
+    color:$white;
+  }
+  >svg{
+    display:none;
+    position: absolute;
+    top: 0;
+    left: 0;
+    -webkit-animation: me-loading .6s infinite linear;
+    animation: me-loading .6s infinite linear;
+  }
+  &.loading{
+    >svg{
+      display:block;
+    }
+  }
+  &.error{
+    background-color: $red;
+  }
+  &.complete{
+    background-color: $green;
+  }
+}
+
+#app-dialog[special-dialog-ui=import-class].ui.modal{
+  width:700px;
+  margin:0 0 0 -350px;
+  &.scale2corner{
+    @include scale(0.1,0.1);
+    opacity:0;
+    margin-top: -80px!important;
+    margin-left: -200px!important;
+    height:524px!important;
+    transform-origin: bottom right;
+    transition: all .3s linear;
+  }
+  .actions{
+    text-align: center;
+    >.ui.button.negative{
+      width:150px;
+    }
+    >.btn-import,>.btn-wait,>.btn-retry,>.btn-continue{
+      display:none;
+      width:150px;
+    }
+  }
+  .content{
+    padding: 0;
+    &.loading{
+      +.actions .btn-wait{
+        display:inline-block;
+      }
+    }
+    &.retry{
+      +.actions .btn-retry{
+        display:inline-block;
+      }
+    }
+    &.complete{
+      +.actions .btn-import{
+        display:inline-block;
+      }
+    }
+    &.continue{
+      +.actions .btn-continue{
+        display:inline-block;
+      }
+    }
+  }
+  .ui.form{
+    height:410px;
+    overflow:hidden;
+    &.visible{
+      overflow: visible;
+    }
+  }
+  .upload-form{
+    padding: 1.5rem;
+    position: absolute;
+    left: -100%;
+    width: 100%;
+    top: 0;
+    @include transition(left .2s linear);
+    &.active{
+      left:0;
+    }
+    >h4{
+      text-align:center;
+      font-size: 20px;
+      font-weight: normal;
+      margin-bottom:0;
+    }
+  }
+  .progress-zone{
+    width:200px;
+    height:160px;
+    border:2px dashed $borderColor;
+    text-align: center;
+    margin:40px auto;
+    .progress-bar{
+      width:180px;
+      height:15px;
+      border-radius:10px;
+      margin:72.5px auto;
+      position:relative;
+      background-color:#eeeeee;
+      overflow:hidden;
+      >.percent{
+        width:0%;
+        height: 15px;
+        background-color: $green;
+        @include transition(width .35s linear);
+      }
+      &.error{
+        >.percent{
+          background-color: $red;
+        }
+      }
+    }
+  }
+  .upload-zone{
+    width:200px;
+    height:160px;
+    border:2px dashed $borderColor;
+    text-align: center;
+    margin:40px auto;
+    cursor:pointer;
+    &:hover{
+      background-color: $milk;
+    }
+    &:active{
+      background-color: darken($milk,1%);
+      .icon{
+        color:darken($green,10%);
+      }
+    }
+    .icon{
+      margin:0;
+      margin-top:50px;
+      font-size:55px;
+      line-height:55px;
+      color:$green;
+    }
+  }
+  .import-form{
+    position: absolute;
+    left: 100%;
+    width: 100%;
+    top: 0;
+    @include transition(left .2s linear);
+    &.active{
+      left:0;
+    }
+  }
+  .file-zone{
+    .icomoon{
+      color:$darkBorderColor;
+      display:block;
+      font-size: 70px;
+      line-height: 70px;
+      margin: 0 auto;
+      width: 70px;
+      margin-bottom: 15px;
+    }
+    .file-name{
+      text-align: center;
+      font-size:18px;
+    }
+    padding:20px;
+    position:relative;
+    top:0;
+    &.active{
+      top:50px;
+      @include transition(top .4s linear);
+    }
+  }
+  .choose-type{
+    >.tip{
+      text-align: center;
+      @include font-smoothing();
+      font-size:16px;
+      margin-top:0;
+      padding-top:20px;
+      border-top:1px dotted $borderColor;
+    }
+    .type-list{
+      padding: 0 86px;
+      @include clearfix();
+      >.type{
+        width:120px;
+        height:90px;
+        cursor:pointer;
+        background-color:$white;
+        color: $normalFontColor;
+        border:1px dashed $borderColor;
+        float:left;
+        margin-right:15px;
+        text-align: center;
+        padding: 0 15px;
+        &.active{
+          background-color: $green;
+          color:$white;
+          border:1px solid $green;
+        }
+        >.icomoon{
+          display:block;
+          margin:15px auto 10px auto;
+        }
+        >span{
+          font-size:16px;
+          @include font-smoothing();
+          display: inline-block;
+        }
+        &:last-child{
+          margin-right:0;
+        }
+      }
+    }
+  }
+  .editor-zone{
+    @include clearfix();
+    margin:20px 0 0 0;
+    padding: 15px;
+    height:68px;
+    background-color: #f7f7f7;
+    label{
+      width:100px;
+    }
+    .field{
+      .error-msg{
+        display:block!important;
+      }
+      &:first-child .error-msg{
+        margin-left:110px;
+      }
+    }
+    .field>input{
+      height:38px;
+      width: calc(100% - 120px);
+      vertical-align: baseline;
+    }
+    .relation-editor{
+      label{
+        vertical-align: top;
+      }
+      .field{
+        vertical-align: top;
+        display: inline-block;
+        margin-right:10px;
+        margin-bottom:0;
+        >input,.ui.dropdown{
+          width:175px;
+          margin:0;
+        }
+      }
+    }
+  }
+  .result-zone{
+    margin-top: 80px;
+    .error-message{
+      font-size:16px;
+    }
+  }
+  .info>.tip{
+    display:block;
+    text-align:center;
+    margin-top:5px;
+    margin-bottom:40px;
+  }
+  .info>.error-message{
+    color:$red;
+    text-align: center;
+    margin-top:5px;
+    margin-bottom:40px;
+    display:none;
+  }
+  .info.error{
+    .error-message{
+      display:block;
+    }
+    .tip{
+      display:none;
+    }
+  }
+}
+
+#app-dialog .list>.checkbox{
+  margin-right:25px;
+  margin-bottom:15px;
+}
+
+.cell-file{
+  .progress-bar{
+    position:absolute;
+    top:12px;
+    left:5px;
+    width:calc(100% - 10px);
+    height:15px;
+    border-radius:10px;
+    background-color:#eeeeee;
+    overflow:hidden;
+    display:none;
+    >.percent{
+      width:1%;
+      height: 15px;
+      background-color: $green;
+      @include transition(width .35s linear);
+    }
+    &.error{
+      >.percent{
+        background-color: $red;
+      }
+    }
+    &.active{
+      display:block;
+    }
+  }
+}
+
+
+.ui-pnotify-text{
+  >p{
+    margin-bottom:15px;
+  }
+  p.progress{
+    width: calc(100% - 15px);
+    height:6px;
+    margin-bottom:10px;
+    margin-left:4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    >.percent{
+      display:block;
+      width:0%;
+      height:6px;
+      background-color: $white;
+      @include transition(width .3s linear);
+    }
+  }
+}

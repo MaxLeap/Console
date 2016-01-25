@@ -1,0 +1,53 @@
+<% include public/header.html %>
+    <link rel="stylesheet" href="/stylesheets/profile.css?version=<%= version %>" />
+    <!-- Page Level Script -->
+    <script type="text/javascript" src="/javascript/vendor/requirejs/require.js" data-main="/javascript/orgprofileMain.js"></script>
+    </head>
+    <!--edit userinfo-->
+
+    <body>
+        <div id="sidebar-background"></div>
+        <!-- BEGIN NAVBAR -->
+        <% include public/headerNav.html %>
+            <!-- END NAVBAR -->
+            <div id="main-sidebar">
+                <div class="header">
+                    <i class="icomoon icomoon-orgprofile"></i>
+                </div>
+                <div class="list">
+                </div>
+            </div>
+            <div id="main-container">
+                <div id="main-toolbar">
+                    <div class="module-name"></div>
+                    <div class="toolbar-content">
+                    </div>
+                </div>
+                <div class="main-content white">
+                    <!-- BEGIN CONTAINER -->
+                    <div id="profile-main" class="main-content">
+                        <form id="profile" class="ui form  loading">
+                            <div class="field">
+                                <label data-i18n="orgprofile.label.billingAddress" data-tip="orgprofile.tips.billingAddress"></label>
+                                <input type="text" name="billingAddress" data-i18n="[placeholder]orgprofile.placeholder.billingAddress" id="billingAddress" />
+                            </div>
+                            <div class="field">
+                                <label data-i18n="orgprofile.label.invoiceTitle" data-tip="orgprofile.tips.invoiceTitle"></label>
+                                <input type="text" name="invoiceTitle" data-i18n="[placeholder]orgprofile.placeholder.invoiceTitle" id="invoiceTitle" />
+                            </div>
+                            <div class="field">
+                                <label data-i18n="orgprofile.label.orgName" data-tip="orgprofile.tips.orgName"></label>
+                                <input type="text" name="name" data-i18n="[placeholder]orgprofile.placeholder.orgName" id="name"  class="validate validate-required" />
+                            </div>
+                            <div class="field">
+                                <label data-i18n="orgprofile.label.phone" data-tip="orgprofile.tips.phone"></label>
+                                <input type="text" name="phone" data-i18n="[placeholder]orgprofile.placeholder.phone" id="phone"  class="validate validate-phoneAndNotempty" />
+                            </div>
+
+                            <div class="ui primary button btn-save pull-right" data-i18n="common.form.save"></div>
+                        </form>
+                    </div>
+                    <!-- END CONTAINER -->
+                </div>
+            </div>
+            <% include public/footer.html %>
