@@ -18,6 +18,7 @@ define(['C', 'U'], function (C, U) {
         'Country': urlBase + '/' + apiVersion + '/location/country',
         'Lang': urlBase + '/' + apiVersion + '/location/lang',
         'captcha':urlBase + '/' + apiVersion + '/captcha/',
+        'Email':urlBase + '/' + apiVersion + '/',
 
         /*Data Import&Export*/
         "DataIE":urlBase+"/"+apiVersion+"/dataie",

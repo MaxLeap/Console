@@ -8,7 +8,7 @@
 <!-- BEGIN CONTAINER -->
 
 <div class="container-fluid prelogin-pannel register prelogin-content" view-root>
-    <form id="form-register" class="form-register" role="form" novalidate>
+    <form id="form-register" class="form-register" role="form" novalidate >
 
         <div class="prelogin-logo" data-i18n="prelogin.title.register"></div>
         <div class="control-group">
@@ -65,7 +65,7 @@
             </div>
             
             
-        <div class="prelogin-captcha control-group">
+        <div class="prelogin-captcha control-group" style="display: none;">
             <div class="default-text" data-i18n="prelogin.tips.loading-captcha"></div>
             <div class="captcha-warpper">
                 <input id="captcha" autocapitalize="off" autocomplete="off"
@@ -84,7 +84,7 @@
             </button>
         </div>
 
-        <div class="control-group agree"></div>
+        <div class="control-group agree" data-i18n="[html]prelogin.tips.register"></div>
         <div class="or-line"></div>
         <div class="control-group prelogin-tip prelogin-tip-register">
             <span data-i18n="prelogin.tips.have-account"></span>
