@@ -35,7 +35,7 @@
     "run-sequence": "^1.0.1"
   },
   "devDependencies": {
-    "css-sprite": "^0.9.3",
+    "sprity": "^1.0.8",
     "gulp-if": "^1.2.5"
   }
 }
