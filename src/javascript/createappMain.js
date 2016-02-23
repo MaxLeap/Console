@@ -41,7 +41,7 @@ require(['main','jquery'], function (){
             //var os = dialog.find('[name=os]').val();
             //var appType=dialog.find('[name=appType]').val();
             var task = Task.create({
-                url: API.get('mapps'),
+                url: API.get('App'),
                 method: 'POST',
                 params:{
                     defaultLang:lang,
