@@ -67,9 +67,10 @@ require(['main','jquery'], function (){
                         subDialog.modal('show');
                         mainDialog.remove();
                         var lang = store2.get('language') === 'zh' ? '/zh_cn' : '/en_us';
+                        var host = 'https://maxleap.cn';
 
-                        $('#android_sdk_link').attr('href',lang+'/quickstart/android/core/new.html');
-                        $('#ios_sdk_link').attr('href',lang+'/quickstart/ios/core/new.html');
+                        $('#android_sdk_link').attr('href',host + lang+'/quickstart/android/core/new.html');
+                        $('#ios_sdk_link').attr('href',host + lang+'/quickstart/ios/core/new.html');
                     }
                 }).finally(function(){
                     dialog.find('.ui.form').removeClass('loading');
