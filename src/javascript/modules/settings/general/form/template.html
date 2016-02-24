@@ -30,7 +30,8 @@
     </h4>
 
     <div class="fields release-product-fields">
-        <div class="ten wide field">
+        <!-- henrytodo:临时改为sixteen, 上传文件支持后应改回ten -->
+        <div class="sixteen wide field">
             <div class="ui top attached tabular menu os" style="margin-bottom:20px;">
                 <a class="active item" data-value="ios">iOS</a>
                 <a class="item" data-value="android">Android</a>
@@ -53,7 +54,8 @@
                 <input type="text" name="platforms.Google Play Store" value="<%- android %>">
             </div>
         </div>
-        <div class="six wide field">
+        <!-- henrytodo:临时加上隐藏此元素, 上传文件支持后应显示 -->
+        <div class="six wide field" style="display: none;">
             <label data-i18n="settings.title.app-icon" data-tip="settings.tip.icon"></label>
             <div class="container-flex">
                 <% if(app_icon) {%>
